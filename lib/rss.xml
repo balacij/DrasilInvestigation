@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Notes]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>Notes</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 07 Apr 2025 17:40:52 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 07 Apr 2025 17:40:50 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Sentence]]></title><description><![CDATA[ 
+ <br>Sentence is a language for constructing prose with inlined display of various atoms (which can be through referred to through a UID to other chunks which contain said atoms), such as <a data-href="USymb" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/usymb.html" class="internal-link" target="_self" rel="noopener nofollow">USymb</a>, <a data-href="Symbol" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/symbol.html" class="internal-link" target="_self" rel="noopener nofollow">Symbol</a>, and <a data-href="ModelExpr" href="ModelExpr" class="internal-link" target="_self" rel="noopener nofollow">ModelExpr</a>.<br>-- | For writing 'Sentence's via combining smaller elements.
+-- 'Sentence's are made up of some known vocabulary of things:
+--
+--     * units (their visual representation)
+--     * words (via 'String's)
+--     * special characters
+--     * accented letters
+--     * references to specific layout objects
+infixr 5 :+:
+data Sentence where
+  -- | Ch looks up the term for a given 'UID' and displays the term with a given 'SentenceStyle' and 'CapitalizationRule'.
+  -- This allows Sentences to hold plural forms of 'NounPhrase's and 'NamedIdea's.
+  Ch    :: SentenceStyle -&gt; TermCapitalization -&gt; UID -&gt; Sentence
+  -- | A branch of Ch dedicated to SymbolStyle only.
+  SyCh  :: UID -&gt; Sentence
+  -- | Converts a unit symbol into a usable Sentence form.
+  Sy    :: USymb -&gt; Sentence
+  -- | Constructor for 'String's, used often for descriptions in Chunks.
+  S     :: String -&gt; Sentence
+  -- | Converts the graphical representation of a symbol into a usable Sentence form.
+  P     :: Symbol -&gt; Sentence       -- should not be used in examples?
+  -- | Lifts an expression into a Sentence.
+  E     :: ModelExpr -&gt; Sentence
+  -- | Takes a 'UID' to a reference, a display name ('Sentence'), and any additional reference display information ('RefInfo'). Resolves the reference later (similar to Ch).
+  Ref   :: UID -&gt; Sentence -&gt; RefInfo -&gt; Sentence
+  -- | Adds quotation marks around a Sentence.
+  Quote :: Sentence -&gt; Sentence
+  -- | Used for a % symbol.
+  Percent :: Sentence
+  -- | Direct concatenation of two Sentences (no implicit spaces!).
+  (:+:) :: Sentence -&gt; Sentence -&gt; Sentence
+  -- | Empty Sentence.
+  EmptyS :: Sentence
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/atoms/sentence.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Atoms/Sentence.md</guid><pubDate>Mon, 07 Apr 2025 04:33:17 GMT</pubDate></item><item><title><![CDATA[Space]]></title><description><![CDATA[ 
+ <br>-- | The difference kinds of spaces that may exist. This type holds numerical
+-- spaces (such as the set of integers, rationals, etc.), a space for booleans,
+-- a space for characters, dimensional spaces (vectors, arrays, etc.), a space
+-- for Actors, discrete sets (both for numbers and strings), and a void space.
+data Space =
+    Integer
+  | Rational
+  | Real
+  | Natural
+  | Boolean
+  | Char
+  | String
+  | Vect Space -- TODO: Length for vectors?
+  | Set Space
+  | Matrix Int Int Space
+  | Array Space
+  | Actor String 
+  | Function (NE.NonEmpty Primitive) Primitive
+  | Void
+  deriving (Eq, Show)
+<br>All variables should have a type. Currently, Space is (ab)used for code-related contexts and pure mathematical contexts.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/atoms/space.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Atoms/Space.md</guid><pubDate>Mon, 07 Apr 2025 05:21:24 GMT</pubDate></item><item><title><![CDATA[Stage]]></title><description><![CDATA[ 
+ <br>-- | Stages are what part of the development process we are in.
+-- There are currently two:
+-- 1) The Equational stage (should be called Specification) 
+-- 2) The Implemenation stage
+--
+-- The point is that information may be rendered differently depending
+-- at what stage we're at. Being able to talk about stages lets us also
+-- attach different display information.
+
+data Stage = Equational -- AKA Specification
+           | Implementation -- AKA Implementation
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/atoms/stage.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Atoms/Stage.md</guid><pubDate>Mon, 07 Apr 2025 05:28:09 GMT</pubDate></item><item><title><![CDATA[Symbol]]></title><description><![CDATA[ 
+ <br>A Symbol is a <a data-tooltip-position="top" aria-label="Domain-Specific Language" data-href="Domain-Specific Language" href="terminology/domain-specific-language.html" class="internal-link" target="_self" rel="noopener nofollow">DSL</a> for building mathematical symbols, also (ab)used for code-related symbols.<br>-- | A 'Symbol' is actually going to be a graphical description of what gets
+-- rendered as a (unique) symbol.  This is actually NOT based on semantics at
+-- all, but just a description of how things look.
+-- 
+-- Symbols can be:
+-- 
+--     * @'Variable'@ (string such as "x" that represent a value that can vary) 
+--     * @'Label'@ (strings such as "max" or "target" that represent a single idea)
+--     * @'Special'@ characters (ex. unicode)
+--     * @Decorated@ symbols using 'Atop'
+--     * @Concatenations@ of symbols, including subscripts and superscripts
+--     * @'Empty'@! (this is to give this a monoid-like flavour)
+data Symbol =
+    Variable String -- ^ Basic variable name creation.
+  | Label    String 
+    -- ^ For when symbols need more context, but we don't want to add a new variable name.
+    -- For example, @v_f@ may be encoded as @Concat [variable "v", label "f"]@.
+  | Integ    Int -- ^ For using numbers in Symbols.
+  | Special  Special 
+    -- ^ For now, special characters are the degree and partial
+    -- differentiation symbols. These should eventually move elsewhere
+    -- and the 'Special' type removed.
+  | Atop     Decoration Symbol
+    -- ^ Used to decorate symbols. For things like vectors (which need to be bold),
+    -- primes, magnitudes, etc. See 'Decoration' for more details.
+  | Corners  [Symbol] [Symbol] [Symbol] [Symbol] Symbol
+    -- ^ Order of Symbols: upleft   lowleft  upright  lowright base. Ex:
+    --
+    -- &gt;Corners [1]   [2]   [3]   [4]   [5]
+    -- @
+    --  Visually:  [1]   [3]
+    --
+    --                [5]
+    --
+    --             [2]   [4]
+    -- @
+  | Concat   [Symbol] -- ^ Concatentation of two symbols: @[s1, s2] -&gt; s1s2@
+  | Empty -- ^ Placeholder for when a symbol is not needed.
+  deriving Eq
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/atoms/symbol.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Atoms/Symbol.md</guid><pubDate>Mon, 07 Apr 2025 05:22:43 GMT</pubDate></item><item><title><![CDATA[UDefn]]></title><description><![CDATA[ 
+ <br>-- | Language of unit equations, to define a unit relative
+-- to another.
+data UDefn = USynonym USymb      -- ^ to define straight synonyms.
+           | UScale Double USymb -- ^ scale, i.e. *.
+           | UShift Double USymb -- ^ shift, i.e. +.
+<br>Dependencies:<br>
+<br><a data-href="USymb" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/usymb.html" class="internal-link" target="_self" rel="noopener nofollow">USymb</a>
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/atoms/udefn.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Atoms/UDefn.md</guid><pubDate>Mon, 07 Apr 2025 05:47:11 GMT</pubDate></item><item><title><![CDATA[UID]]></title><description><![CDATA[ 
+ <br>A UID is supposed to be an internal/operational-use only atom that contains a unique reference to a chunk (unique with respect to a <a data-href="ChunkDB" href="drasil/designing-drasil's-chunks-2025/analysis/chunkdb.html" class="internal-link" target="_self" rel="noopener nofollow">ChunkDB</a>). However, UIDs are also (ab)used for <a data-href="references and citations" href="references and citations" class="internal-link" target="_self" rel="noopener nofollow">references and citations</a> unique label creation (within both  and HTML).]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/atoms/uid.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Atoms/UID.md</guid><pubDate>Sun, 06 Apr 2025 22:37:20 GMT</pubDate></item><item><title><![CDATA[UnitSymbol]]></title><description><![CDATA[ 
+ <br>-- | When we define units, they come in three flavours:
+-- SI (base) units, derived SI units (aka synonyms), and defined units.
+-- The type below captures that knowledge.
+data UnitSymbol =
+     BaseSI USymb
+   | DerivedSI USymb USymb UDefn
+   | Defined USymb UDefn
+<br>Dependencies:<br>
+<br><a data-href="USymb" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/usymb.html" class="internal-link" target="_self" rel="noopener nofollow">USymb</a>
+<br><a data-href="UDefn" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/udefn.html" class="internal-link" target="_self" rel="noopener nofollow">UDefn</a>
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/atoms/unitsymbol.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Atoms/UnitSymbol.md</guid><pubDate>Mon, 07 Apr 2025 05:45:59 GMT</pubDate></item><item><title><![CDATA[USymb]]></title><description><![CDATA[<a class="tag" href="?query=tag:todo" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#todo</a> 
+ <br><a href=".?query=tag:todo" class="tag" target="_blank" rel="noopener nofollow">#todo</a>: This is a very odd atom -- what do we actually use it for? I don't see any real usage?<br>-- UName for the base cases, otherwise build up.
+-- Probably a 7-vector would be better (less error-prone!)
+-- | Language of units (how to build them up into a unit symbol).
+-- Of the form ('Symbol' ^ 'Integer'). The 'Integer' may be negative, but should not be zero.
+newtype USymb = US [(Symbol, Integer)] -- can be negative, should not be 0
+  deriving (Eq)
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/atoms/usymb.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Atoms/USymb.md</guid><pubDate>Mon, 07 Apr 2025 04:37:57 GMT</pubDate></item><item><title><![CDATA[CI]]></title><description><![CDATA[ 
+ <br>data CI = CI { _nc' :: IdeaDict, _ab :: String, cdom' :: [UID]}
+<br>A CI is an <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> that belongs to a <a data-tooltip-position="top" aria-label="ConceptDomain" data-href="ConceptDomain" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/conceptdomain.html" class="internal-link" target="_self" rel="noopener nofollow">concept domain</a> and is required to have an abbreviation (via type classes <a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a> (maybe has an abbreviation) and <a data-href="CommonIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/commonidea.html" class="internal-link" target="_self" rel="noopener nofollow">CommonIdea</a> (must have an abbreviation)).<br>Satisfies:<br>
+<br><a data-href="HasUID" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasuid.html" class="internal-link" target="_self" rel="noopener nofollow">HasUID</a>
+<br><a data-href="NamedIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/namedidea.html" class="internal-link" target="_self" rel="noopener nofollow">NamedIdea</a>
+<br><a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a>
+<br><a data-href="CommonIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/commonidea.html" class="internal-link" target="_self" rel="noopener nofollow">CommonIdea</a>
+<br><a data-href="ConceptDomain" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/conceptdomain.html" class="internal-link" target="_self" rel="noopener nofollow">ConceptDomain</a>
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunk-types/ci.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunk Types/CI.md</guid><pubDate>Mon, 07 Apr 2025 04:50:12 GMT</pubDate></item><item><title><![CDATA[ConceptChunk]]></title><description><![CDATA[ 
+ <br>-- | The ConceptChunk datatype records a concept that contains an idea ('IdeaDict'),
+-- a definition ('Sentence'), and an associated domain of knowledge (['UID']).
+--
+-- Ex. The concept of "Accuracy" may be defined as the quality or state of being correct or precise.
+data ConceptChunk = ConDict { _idea :: IdeaDict -- ^ Contains the idea of the concept.
+                            , _defn' :: Sentence -- ^ The definition of the concept.
+                            , cdom' :: [UID] -- ^ Domain of the concept.
+                            }
+<br>A ConceptChunk is a chunk that extends an <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> with a <a data-href="Sentence" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/sentence.html" class="internal-link" target="_self" rel="noopener nofollow">Sentence</a> that defines the term the <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> defines (via <a data-href="Definition" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/definition.html" class="internal-link" target="_self" rel="noopener nofollow">Definition</a>) and information about which <a data-tooltip-position="top" aria-label="ConceptDomain" data-href="ConceptDomain" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/conceptdomain.html" class="internal-link" target="_self" rel="noopener nofollow">concept domain</a>s it is relevant to.<br>Satisfies:<br>
+<br><a data-href="HasUID" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasuid.html" class="internal-link" target="_self" rel="noopener nofollow">HasUID</a>
+<br><a data-href="NamedIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/namedidea.html" class="internal-link" target="_self" rel="noopener nofollow">NamedIdea</a>
+<br><a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a>
+<br><a data-href="Definition" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/definition.html" class="internal-link" target="_self" rel="noopener nofollow">Definition</a>
+<br><a data-href="ConceptDomain" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/conceptdomain.html" class="internal-link" target="_self" rel="noopener nofollow">ConceptDomain</a>
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunk-types/conceptchunk.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunk Types/ConceptChunk.md</guid><pubDate>Mon, 07 Apr 2025 04:50:45 GMT</pubDate></item><item><title><![CDATA[IdeaDict]]></title><description><![CDATA[ 
+ <br>-- | 'IdeaDict' is the canonical dictionary associated to an 'Idea'.
+-- Contains a 'UID' and a term that could have an abbreviation ('Maybe' 'String').
+--
+-- Ex. The project name "Double Pendulum" may have the abbreviation "DblPend".
+data IdeaDict = IdeaDict {
+  _uu :: UID,
+  _np :: NP,
+  mabbr :: Maybe String
+}
+<br>An IdeaDict is a chunk that simply proclaims a "term" (satisfying the <a data-href="NamedIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/namedidea.html" class="internal-link" target="_self" rel="noopener nofollow">NamedIdea</a> typeclass) which other chunks may assign further meaning to. An IdeaDict may also have an abbreviation (satisfying the <a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a> typeclass).<br>Satisfies:<br>
+<br><a data-href="HasUID" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasuid.html" class="internal-link" target="_self" rel="noopener nofollow">HasUID</a>
+<br><a data-href="NamedIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/namedidea.html" class="internal-link" target="_self" rel="noopener nofollow">NamedIdea</a>
+<br><a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a>
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunk-types/ideadict.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunk Types/IdeaDict.md</guid><pubDate>Mon, 07 Apr 2025 04:51:21 GMT</pubDate></item><item><title><![CDATA[QuantityDict]]></title><description><![CDATA[ 
+ <br>-- | QuantityDict is a combination of an 'IdeaDict' with a quantity.
+-- Contains an 'IdeaDict', 'Space', a function from 
+-- 'Stage' -&gt; 'Symbol', and 'Maybe' a 'UnitDefn'.
+--
+-- Ex. A pendulum arm does not necessarily have to be defined as a concept before
+-- we assign a space (Real numbers), a symbol (l), or units (cm, m, etc.).
+data QuantityDict = QD { _id' :: IdeaDict
+                       , _typ' :: Space
+                       , _symb' :: Stage -&gt; Symbol
+                       , _unit' :: Maybe UnitDefn
+                       }
+<br>A chunk that extends an <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> that assigns "mathematical meaning" to a term, proclaiming that the term denotes a quantity, with atoms:<br>
+<br>A <a data-href="Space" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/space.html" class="internal-link" target="_self" rel="noopener nofollow">Space</a> (i.e., a "type").
+<br>A <a data-href="Symbol" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/symbol.html" class="internal-link" target="_self" rel="noopener nofollow">Symbol</a>, guarded by a rendering <a data-href="Stage" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/stage.html" class="internal-link" target="_self" rel="noopener nofollow">Stage</a>.<br>
+And:
+<br>Maybe a <a data-href="UnitDefn" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/unitdefn.html" class="internal-link" target="_self" rel="noopener nofollow">UnitDefn</a> (i.e., the unit of the quantity).
+<br>Satisfies:<br>
+<br><a data-href="HasUID" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasuid.html" class="internal-link" target="_self" rel="noopener nofollow">HasUID</a>
+<br><a data-href="NamedIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/namedidea.html" class="internal-link" target="_self" rel="noopener nofollow">NamedIdea</a>
+<br><a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a>
+<br><a data-href="HasSpace" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasspace.html" class="internal-link" target="_self" rel="noopener nofollow">HasSpace</a>
+<br><a data-href="HasSymbol" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hassymbol.html" class="internal-link" target="_self" rel="noopener nofollow">HasSymbol</a>
+<br><a data-href="Quantity" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/quantity.html" class="internal-link" target="_self" rel="noopener nofollow">Quantity</a>
+<br><a data-href="MayHaveUnit" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/mayhaveunit.html" class="internal-link" target="_self" rel="noopener nofollow">MayHaveUnit</a>
+<br><a data-href="Express" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/express.html" class="internal-link" target="_self" rel="noopener nofollow">Express</a>
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunk-types/quantitydict.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunk Types/QuantityDict.md</guid><pubDate>Mon, 07 Apr 2025 05:32:18 GMT</pubDate></item><item><title><![CDATA[UnitDefn]]></title><description><![CDATA[ 
+ <br>-- | For defining units.
+-- It has a 'ConceptChunk' (that defines what kind of unit it is),
+-- a unit symbol, maybe another (when it is a synonym),
+-- perhaps a definition, and a list of 'UID' of the units that make up
+-- the definition.
+--
+-- Ex. Meter is a unit of length defined by the symbol (m).
+data UnitDefn = UD { _vc :: ConceptChunk 
+                   , _cas :: UnitSymbol
+                   , _cu :: [UID] }
+makeLenses ''UnitDefn
+<br>A chunk for defining units, extending a <a data-href="ConceptChunk" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/conceptchunk.html" class="internal-link" target="_self" rel="noopener nofollow">ConceptChunk</a> with a <a data-href="UnitSymbol" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/unitsymbol.html" class="internal-link" target="_self" rel="noopener nofollow">UnitSymbol</a> and list of dependency <a data-href="UnitDefn" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/unitdefn.html" class="internal-link" target="_self" rel="noopener nofollow">UnitDefn</a>s.<br>Satisfies:<br>
+<br><a data-href="HasUID" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasuid.html" class="internal-link" target="_self" rel="noopener nofollow">HasUID</a>
+<br><a data-href="NamedIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/namedidea.html" class="internal-link" target="_self" rel="noopener nofollow">NamedIdea</a>
+<br><a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a>
+<br><a data-href="Definition" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/definition.html" class="internal-link" target="_self" rel="noopener nofollow">Definition</a>
+<br><a data-href="ConceptDomain" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/conceptdomain.html" class="internal-link" target="_self" rel="noopener nofollow">ConceptDomain</a>
+<br><a data-href="HasUnitSymbol" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasunitsymbol.html" class="internal-link" target="_self" rel="noopener nofollow">HasUnitSymbol</a>
+<br><a data-href="IsUnit" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/isunit.html" class="internal-link" target="_self" rel="noopener nofollow">IsUnit</a>
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunk-types/unitdefn.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunk Types/UnitDefn.md</guid><pubDate>Mon, 07 Apr 2025 05:45:14 GMT</pubDate></item><item><title><![CDATA[Software Requirements Specification (CI)]]></title><description><![CDATA[ 
+ <br>A <a data-href="CI" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ci.html" class="internal-link" target="_self" rel="noopener nofollow">CI</a> whose term merges two others (<a data-href="Software Requirements (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/software-requirements-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">Software Requirements (IdeaDict)</a> and <a data-href="Specification (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/specification-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">Specification (IdeaDict)</a>) with an abbreviation "SRS" belonging to the <a data-href="Software Engineering (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/software-engineering-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">Software Engineering (IdeaDict)</a> domain.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/cis/software-requirements-specification-(ci).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/CIs/Software Requirements Specification (CI).md</guid><pubDate>Sun, 06 Apr 2025 23:07:15 GMT</pubDate></item><item><title><![CDATA[two-dimensional (CI)]]></title><description><![CDATA[ 
+ <br>twoD   = commonIdeaWithDict "twoD"   (cn "two-dimensional")   "2D" [mathematics, physics]
+<br>A <a data-href="CI" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ci.html" class="internal-link" target="_self" rel="noopener nofollow">CI</a> with a term and abbreviation belonging to two concept domains: <a data-href="Mathematics (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/mathematics-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">Mathematics (IdeaDict)</a> and <a data-href="Physics (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/physics-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">Physics (IdeaDict)</a>.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/cis/two-dimensional-(ci).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/CIs/two-dimensional (CI).md</guid><pubDate>Mon, 07 Apr 2025 05:06:27 GMT</pubDate></item><item><title><![CDATA[motion (ConceptChunk)]]></title><description><![CDATA[ 
+ <br>motion = dccWDS "motion" (cn "motion")
+  (S "change in position of a physical body over time")
+<br>A <a data-href="ConceptChunk" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/conceptchunk.html" class="internal-link" target="_self" rel="noopener nofollow">ConceptChunk</a> giving an English definition to the term "motion."]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/conceptchunks/motion-(conceptchunk).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/ConceptChunks/motion (ConceptChunk).md</guid><pubDate>Mon, 07 Apr 2025 05:11:50 GMT</pubDate></item><item><title><![CDATA[Projectile (ConceptChunk)]]></title><description><![CDATA[ 
+ <br>projectile = dcc "projectile" (nounPhraseSP "projectile") "the object to be launched at the target"
+<br>A <a data-href="ConceptChunk" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/conceptchunk.html" class="internal-link" target="_self" rel="noopener nofollow">ConceptChunk</a> defining "Projectile" with an English description.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/conceptchunks/projectile-(conceptchunk).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/ConceptChunks/Projectile (ConceptChunk).md</guid><pubDate>Mon, 07 Apr 2025 05:11:20 GMT</pubDate></item><item><title><![CDATA[analysis (IdeaDict)]]></title><description><![CDATA[ 
+ <br>A simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> that defines the term "analysis" with no abbreviation.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/analysis-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/analysis (IdeaDict).md</guid><pubDate>Mon, 07 Apr 2025 05:03:13 GMT</pubDate></item><item><title><![CDATA[Mathematics (IdeaDict)]]></title><description><![CDATA[ 
+ <br>A simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> defining "Mathematics" with no abbreviation.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/mathematics-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/Mathematics (IdeaDict).md</guid><pubDate>Mon, 07 Apr 2025 05:06:40 GMT</pubDate></item><item><title><![CDATA[Physics (IdeaDict)]]></title><description><![CDATA[ 
+ <br>A simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> defining "Physics" with no abbreviation.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/physics-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/Physics (IdeaDict).md</guid><pubDate>Mon, 07 Apr 2025 05:06:59 GMT</pubDate></item><item><title><![CDATA[problem (IdeaDict)]]></title><description><![CDATA[ 
+ <br>A simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> that defines the term "problem," with no abbreviation.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/problem-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/problem (IdeaDict).md</guid><pubDate>Mon, 07 Apr 2025 04:56:32 GMT</pubDate></item><item><title><![CDATA[Requirement (IdeaDict)]]></title><description><![CDATA[ 
+ <br>A simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> with a term and no abbreviation.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/requirement-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/Requirement (IdeaDict).md</guid><pubDate>Sun, 06 Apr 2025 23:01:37 GMT</pubDate></item><item><title><![CDATA[Software (IdeaDict)]]></title><description><![CDATA[ 
+ <br>A simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> with a term and no abbreviation.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/software-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/Software (IdeaDict).md</guid><pubDate>Sun, 06 Apr 2025 23:01:21 GMT</pubDate></item><item><title><![CDATA[Software Engineering (IdeaDict)]]></title><description><![CDATA[ 
+ <br>-- | Various domains that are used in Drasil. May have an abbreviation.
+.., softEng, .. :: IdeaDict
+-------------------------------------------------------------------------------
+--  IdeaDict     |   |      id       |       term                    |  abbreviation
+-------------------------------------------------------------------------------
+...
+softEng      = mkIdea  "softEng"        (cn' "Software Engineering")  (Just "SE")
+<br>softEng is an <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a>.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/software-engineering-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/Software Engineering (IdeaDict).md</guid><pubDate>Sun, 06 Apr 2025 22:48:20 GMT</pubDate></item><item><title><![CDATA[Software Requirements (IdeaDict)]]></title><description><![CDATA[ 
+ <br>A simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> that merges two other terms: <a data-href="Software (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/software-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">Software (IdeaDict)</a> and <a data-href="Requirement (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/requirement-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">Requirement (IdeaDict)</a>.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/software-requirements-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/Software Requirements (IdeaDict).md</guid><pubDate>Sun, 06 Apr 2025 23:01:05 GMT</pubDate></item><item><title><![CDATA[Specification (IdeaDict)]]></title><description><![CDATA[ 
+ <br>A simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> with a term and no abbreviation.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/ideadicts/specification-(ideadict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/IdeaDicts/Specification (IdeaDict).md</guid><pubDate>Sun, 06 Apr 2025 23:04:46 GMT</pubDate></item><item><title><![CDATA[message (QuantityDict)]]></title><description><![CDATA[ 
+ <br>message :: QuantityDict
+message = vc "message" (nounPhraseSent (S "output message as a string")) lS String
+<br>message is a <a data-href="QuantityDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/quantitydict.html" class="internal-link" target="_self" rel="noopener nofollow">QuantityDict</a> that implicitly defines an <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a> ("motion", via vc) with an English definition, a symbol (), and as -typed.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunks/quantitydicts/message-(quantitydict).html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Chunks/QuantityDicts/message (QuantityDict).md</guid><pubDate>Mon, 07 Apr 2025 05:30:33 GMT</pubDate></item><item><title><![CDATA[CommonIdea]]></title><description><![CDATA[ 
+ <br>-- | CommonIdea is a 'NamedIdea' with the additional
+-- constraint that it __must__ have an abbreviation.
+class NamedIdea c =&gt; CommonIdea c where
+  -- | Introduces abrv which necessarily provides an abbreviation.
+  abrv :: c -&gt; String
+<br>A thing that is a CommonIdea must also be a <a data-href="NamedIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/namedidea.html" class="internal-link" target="_self" rel="noopener nofollow">NamedIdea</a> with the added restriction that it must have an abbreviation.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/commonidea.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/CommonIdea.md</guid><pubDate>Sun, 06 Apr 2025 22:40:04 GMT</pubDate></item><item><title><![CDATA[ConceptDomain]]></title><description><![CDATA[ 
+ <br>-- | Some concepts have a domain (related information encoded in 'UID's to other chunks).
+class ConceptDomain c where
+  -- | Provides Getter for the concept domain tags for a chunk
+  cdom :: c -&gt; [UID]
+<br>A chunk type that instantiates ConceptDomain means that the term defined by chunk type (i.e., the name of the chunk type) belongs to various domains (commonly captured with simple <a data-href="IdeaDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ideadict.html" class="internal-link" target="_self" rel="noopener nofollow">IdeaDict</a>s):<br>-- | Various domains that are used in Drasil. May have an abbreviation.
+compScience, softEng, mathematics, progLanguage, physics, civilEng,
+  materialEng, documentc, knowledgemng :: IdeaDict
+-------------------------------------------------------------------------------
+--  IdeaDict     |   |      id       |       term                    |  abbreviation
+-------------------------------------------------------------------------------
+compScience  = mkIdea  "compScience"    (cn' "Computer Science")      (Just "CS")
+softEng      = mkIdea  "softEng"        (cn' "Software Engineering")  (Just "SE")
+mathematics  = mkIdea  "mathematics"    (cn' "Mathematics")           Nothing
+progLanguage = mkIdea  "progLanguage"   (cn' "Programming Language")  Nothing
+physics      = mkIdea  "physics"        (cn' "Physics")               Nothing
+civilEng     = mkIdea  "civilEng"       (cn' "Civil Engineering")     Nothing
+materialEng  = mkIdea  "materialEng"    (cn' "Material Engineering")  Nothing
+documentc    = mkIdea  "documentc"      (cn' "Document")              (Just "Doc")
+knowledgemng = mkIdea  "knowledgemng"   (cn' "Knowledge Management")  Nothing
+
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/conceptdomain.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/ConceptDomain.md</guid><pubDate>Sun, 06 Apr 2025 21:05:27 GMT</pubDate></item><item><title><![CDATA[Definition]]></title><description><![CDATA[ 
+ <br>-- | Defines a chunk.
+class Definition c where
+  -- | Provides (a 'Lens' to) the definition for a chunk.
+  defn :: Lens' c Sentence
+<br>A chunk that satisfies Definition means that it has a human-readable definition for something.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/definition.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/Definition.md</guid><pubDate>Mon, 07 Apr 2025 04:48:45 GMT</pubDate></item><item><title><![CDATA[Express]]></title><description><![CDATA[ 
+ <br>Things that instantiate this have an axiomatic description and can be rendered as such.<br>-- | Data that can be expressed using 'ModelExpr'.
+class Express c where
+  express :: c -&gt; ModelExpr
+
+instance Express Literal where
+  express = Lit
+
+-- | Rewriting 'Expr's using the 'ModelExpr' language.
+instance Express Expr where
+  express = expr
+
+-- | No change, it's already a 'ModelExpr'.
+instance Express ModelExpr where
+  express = id
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/express.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/Express.md</guid><pubDate>Mon, 07 Apr 2025 06:56:14 GMT</pubDate></item><item><title><![CDATA[HasSpace]]></title><description><![CDATA[ 
+ <br>-- | HasSpace is anything which has a 'Space'.
+class HasSpace c where
+  -- | Provides a 'Getter' to the 'Space'.
+  typ      :: Getter c Space
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/hasspace.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/HasSpace.md</guid><pubDate>Mon, 07 Apr 2025 05:33:47 GMT</pubDate></item><item><title><![CDATA[HasSymbol]]></title><description><![CDATA[ 
+ <br>-- | A HasSymbol is anything which has a 'Symbol'.
+class HasSymbol c where
+  -- | Provides the 'Symbol' for a particular stage of generation.
+  symbol  :: c -&gt; Stage -&gt; Symbol
+<br>A thing that has a <a data-href="Symbol" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/symbol.html" class="internal-link" target="_self" rel="noopener nofollow">Symbol</a>, which is dependant on the rendering <a data-href="Stage" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/stage.html" class="internal-link" target="_self" rel="noopener nofollow">Stage</a>.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/hassymbol.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/HasSymbol.md</guid><pubDate>Mon, 07 Apr 2025 06:55:00 GMT</pubDate></item><item><title><![CDATA[HasUID]]></title><description><![CDATA[ 
+ <br>-- | The most basic item: having a unique identifier key, here a UID.
+class HasUID c where
+  -- | Provides a /unique/ id for internal Drasil use.
+  uid :: Getter c UID
+<br>Something that satisfies HasUID currently means that "it is a chunk."]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/hasuid.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/HasUID.md</guid><pubDate>Sun, 06 Apr 2025 22:28:44 GMT</pubDate></item><item><title><![CDATA[HasUnitSymbol]]></title><description><![CDATA[ 
+ <br>-- | Some chunks store a unit symbol.
+class HasUnitSymbol u where
+  -- | Provides the ability to hold a unit symbol ('USymb').
+  usymb :: u -&gt; USymb
+<br>Intended only for unit-defining chunks to expose what <a data-href="USymb" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/usymb.html" class="internal-link" target="_self" rel="noopener nofollow">USymb</a> they define.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/hasunitsymbol.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/HasUnitSymbol.md</guid><pubDate>Mon, 07 Apr 2025 05:48:04 GMT</pubDate></item><item><title><![CDATA[Idea]]></title><description><![CDATA[ 
+ <br>-- | An 'Idea' is the combination of a 'NamedIdea' and a 'CommonIdea'.
+-- In other words, it /may/ have an acronym/abbreviation.
+class NamedIdea c =&gt; Idea c where
+  -- | Gets the acronym/abbreviation.
+  getA :: c -&gt; Maybe String
+<br>Note: you can ignore the "CommonIdea" part of the above code comment.<br>An Idea must also be a <a data-href="NamedIdea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/namedidea.html" class="internal-link" target="_self" rel="noopener nofollow">NamedIdea</a>.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/idea.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/Idea.md</guid><pubDate>Sun, 06 Apr 2025 22:31:40 GMT</pubDate></item><item><title><![CDATA[IsUnit]]></title><description><![CDATA[<a class="tag" href="?query=tag:todo" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#todo</a> 
+ <br>-- | Units are 'Idea's with a 'Definition' which store a unit symbol.
+-- They must also be explicitly declared to be instances of IsUnit.
+class (Idea u, Definition u, HasUnitSymbol u) =&gt; IsUnit u where
+  -- | May have a unit definition.
+  udefn :: u -&gt; Maybe UDefn
+  -- | Holds units as a list of 'UID'.
+  getUnits :: u -&gt; [UID]
+<br>A chunk that "is a unit" (/"defines a unit") must also be an <a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a> and have a <a data-href="Definition" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/definition.html" class="internal-link" target="_self" rel="noopener nofollow">Definition</a> and <a data-tooltip-position="top" aria-label="HasUnitSymbol" data-href="HasUnitSymbol" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasunitsymbol.html" class="internal-link" target="_self" rel="noopener nofollow">Unit Symbol</a>. <br><a href=".?query=tag:todo" class="tag" target="_blank" rel="noopener nofollow">#todo</a> What is going on with this type class definition?]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/isunit.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/IsUnit.md</guid><pubDate>Mon, 07 Apr 2025 05:52:48 GMT</pubDate></item><item><title><![CDATA[MayHaveUnit]]></title><description><![CDATA[ 
+ <br>-- | Types may contain a unit ('UnitDefn').
+class MayHaveUnit u where
+   getUnit :: u -&gt; Maybe UnitDefn
+<br>Something that might have a <a data-tooltip-position="top" aria-label="UnitDefn" data-href="UnitDefn" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/unitdefn.html" class="internal-link" target="_self" rel="noopener nofollow">unit</a>.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/mayhaveunit.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/MayHaveUnit.md</guid><pubDate>Mon, 07 Apr 2025 06:09:23 GMT</pubDate></item><item><title><![CDATA[NamedIdea]]></title><description><![CDATA[ 
+ <br>-- | A NamedIdea is a 'term' that we've identified (has a 'UID') as 
+-- being worthy of naming.
+class HasUID c =&gt; NamedIdea c where
+  -- | Lens to the term (a noun phrase).
+  term :: Lens' c NP
+<br>All types satisfying NamedIdea must also satisfy <a data-href="HasUID" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasuid.html" class="internal-link" target="_self" rel="noopener nofollow">HasUID</a>.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/namedidea.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/NamedIdea.md</guid><pubDate>Sun, 06 Apr 2025 22:29:14 GMT</pubDate></item><item><title><![CDATA[Quantity]]></title><description><![CDATA[ 
+ <br>-- | A Quantity is an 'Idea' with a 'Space' and a 'Symbol'.
+-- In theory, it should also restrict to being a part of 'MayHaveUnit', but that causes
+-- all sorts of import cycles (or lots of orphans).
+class (Idea c, HasSpace c, HasSymbol c) =&gt; Quantity c where
+<br>Alias for a(n) thing that satisfies all of:<br>
+<br><a data-href="Idea" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/idea.html" class="internal-link" target="_self" rel="noopener nofollow">Idea</a>
+<br><a data-href="HasSpace" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasspace.html" class="internal-link" target="_self" rel="noopener nofollow">HasSpace</a>
+<br><a data-href="HasSymbol" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hassymbol.html" class="internal-link" target="_self" rel="noopener nofollow">HasSymbol</a>
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/typeclasses/quantity.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Typeclasses/Quantity.md</guid><pubDate>Mon, 07 Apr 2025 06:08:28 GMT</pubDate></item><item><title><![CDATA[ChunkDB]]></title><description><![CDATA[<a class="tag" href="?query=tag:todo" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#todo</a> 
+ <br><a href=".?query=tag:todo" class="tag" target="_blank" rel="noopener nofollow">#todo</a> Explain.<br>-- | Our chunk databases. \Must contain all maps needed in an example.\
+-- In turn, these maps must contain every chunk definition or concept 
+-- used in its respective example, else an error is thrown.
+data ChunkDB = CDB {
+  -- CHUNKS
+    symbolTable           :: SymbolMap
+  , termTable             :: TermMap 
+  , defTable              :: ConceptMap
+  , _unitTable            :: UnitMap
+  , _dataDefnTable        :: DatadefnMap
+  , _insmodelTable        :: InsModelMap
+  , _gendefTable          :: GendefMap
+  , _theoryModelTable     :: TheoryModelMap
+  , _conceptinsTable      :: ConceptInstanceMap
+  , _citationTable        :: CitationMap
+  -- NOT CHUNKS
+  , _labelledcontentTable :: LabelledContentMap -- TODO: LabelledContent needs to be rebuilt. See JacquesCarette/Drasil#4023.
+  , _refTable             :: ReferenceMap -- TODO: References need to be rebuilt. See JacquesCarette/Drasil#4022.
+  , _traceTable           :: TraceMap
+  , _refbyTable           :: RefbyMap
+  }
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/chunkdb.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/ChunkDB.md</guid><pubDate>Mon, 07 Apr 2025 04:57:27 GMT</pubDate></item><item><title><![CDATA[Projectile Lesson Plan]]></title><description><![CDATA[ 
+ <br>The Projectile Lesson Plan (PLP) is an offshoot of <a data-href="Projectile" href="drasil/designing-drasil's-chunks-2025/projectile.html" class="internal-link" target="_self" rel="noopener nofollow">Projectile</a>. <a data-href="SystemInformation" href="drasil/designing-drasil's-chunks-2025/systeminformation.html" class="internal-link" target="_self" rel="noopener nofollow">SystemInformation</a> (SI) does not quite fit the bill for PLP's needs, as can be seen through the almost complete lack of subtance in the PLP SI:<br>si :: SystemInformation
+si = SI {
+  _sys         = projectileMotion,
+  _kind        = Doc.notebook,
+  _authors     = [spencerSmith],
+  _purpose     = [],
+  _background  = [], 
+  _motivation  = [],
+  _scope       = [],
+  _quants      = [] :: [QuantityDict],
+  _instModels  = [],
+  _datadefs    = [],
+  _configFiles = [],
+  _inputs      = [] :: [QuantityDict],
+  _outputs     = [] :: [QuantityDict],
+  _constraints = [] :: [ConstrainedChunk],
+  _constants   = [] :: [ConstQDef],
+  _sysinfodb   = symbMap,
+  _usedinfodb  = usedDB
+}
+]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/projectile-lesson-plan.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Projectile Lesson Plan.md</guid><pubDate>Mon, 07 Apr 2025 04:26:47 GMT</pubDate></item><item><title><![CDATA[Projectile System]]></title><description><![CDATA[ 
+ <br>The Projectile <a data-href="SystemInformation" href="drasil/designing-drasil's-chunks-2025/systeminformation.html" class="internal-link" target="_self" rel="noopener nofollow">SystemInformation</a> (SI) defines what "<a data-href="Projectile" href="drasil/designing-drasil's-chunks-2025/projectile.html" class="internal-link" target="_self" rel="noopener nofollow">Projectile</a>" means. Unfortunately, SI is not a <a data-href="well-understood" href="drasil/terminology/well-understood.html" class="internal-link" target="_self" rel="noopener nofollow">well-understood</a> data type in Drasil. Thus, we will try to excavate some meaning by deconstructing Projectile's SI (sorted according to deconstructing):<br>si :: SystemInformation
+si = SI {
+  _kind        = Doc.srs,
+  _sys         = projectileTitle,
+  _authors     = [samCrawford, brooks, spencerSmith],
+  _motivation  = [motivation],
+  _background  = [background],
+  _purpose     = [purp],
+  _inputs      = inputs,
+  _outputs     = outputs,
+  _scope       = [scope],
+  _constants   = constants,
+  _constraints = map cnstrw constrained,
+  _quants      = symbols,
+  _datadefs    = dataDefs,
+  _instModels  = iMods,
+  _sysinfodb   = symbMap,
+  _usedinfodb  = usedDB,
+  _configFiles = []
+}
+<br><br>In this subsection, we will examine each sections of the above code snippet according to how I see it being logically connected. The order is as follows:<br>
+<br><a data-href="#Intention to Define a Software Requirements Specification" href="about:blank#Intention_to_Define_a_Software_Requirements_Specification" class="internal-link" target="_self" rel="noopener nofollow">Intention to Define a Software Requirements Specification</a>.
+<br><a data-href="#Defining an Input-Calculate-Output (ICO) Software Solution (an Abstract Software Solution) for Software Generation" href="about:blank#Defining_an_Input-Calculate-Output_(ICO)_Software_Solution_(an_Abstract_Software_Solution)_for_Software_Generation" class="internal-link" target="_self" rel="noopener nofollow">Defining an Input-Calculate-Output (ICO) Software Solution (an Abstract Software Solution) for Software Generation</a>
+<br><a data-href="#Remaining SI Components" href="about:blank#Remaining_SI_Components" class="internal-link" target="_self" rel="noopener nofollow">Remaining SI Components</a>
+<br><br>si :: SystemInformation
+si = SI {
+  _kind        = Doc.srs,
+<br>
+<br>Doc.srs is a <a data-href="CI" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ci.html" class="internal-link" target="_self" rel="noopener nofollow">CI</a> with a UID ("srs"), term ("<a data-tooltip-position="top" aria-label="Software Requirements (IdeaDict)" data-href="Software Requirements (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/software-requirements-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">software requirements</a> <a data-tooltip-position="top" aria-label="Specification (IdeaDict)" data-href="Specification (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/specification-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">specification</a>"), abbreviation ("SRS"), and a "concept domain" (<a data-tooltip-position="top" aria-label="Software Engineering (IdeaDict)" data-href="Software Engineering (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/software-engineering-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">software engineering</a>).
+<br>The first thing the SI contains is a "notice" -- that we are interested in modelling a software computation problem, using standard/conventional terminology. I say "notice" because the only indication of this notice is _kind, filled in by Doc.srs, a <a data-href="CI" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ci.html" class="internal-link" target="_self" rel="noopener nofollow">CI</a> (a "common idea" chunk, defining the acronym "SRS" (<a data-href="Software Requirements Specification (CI)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/cis/software-requirements-specification-(ci).html" class="internal-link" target="_self" rel="noopener nofollow">Software Requirements Specification (CI)</a>) and its long form with no other semantic information). All of Drasil's other case studies also use Doc.srs, except for the <a data-href="Projectile Lesson Plan" href="drasil/designing-drasil's-chunks-2025/analysis/projectile-lesson-plan.html" class="internal-link" target="_self" rel="noopener nofollow">Projectile Lesson Plan</a> (PLP). PLP defines a Doc.notebook and uses very few of the remainder of the SI field. Thus _kind may mean something more than a what a simple <a data-href="CI" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ci.html" class="internal-link" target="_self" rel="noopener nofollow">CI</a> conveys.<br>I believe the SRS in question also implicitly refers to the SmithEtAl SRS template (<a data-href="SmithAndLai2005" href="zotero/smithandlai2005.html" class="internal-link" target="_self" rel="noopener nofollow">SmithAndLai2005</a>) because that brings about the terminology we use in organizing scientific knowledge in Drasil (e.g., <a data-href="TheoryModel" href="TheoryModel" class="internal-link" target="_self" rel="noopener nofollow">TheoryModel</a>, <a data-href="InstanceModel" href="InstanceModel" class="internal-link" target="_self" rel="noopener nofollow">InstanceModel</a>, etc.). It also brings about some of our presumed nonfunctional requirements: traceable, correct, and verifiable (not necessarily: reusable, understandable, maintainable, and portable).<br>In defining an SRS, we are defining (1) an abstract software solution (<a data-href="#Defining an Input-Calculate-Output (ICO) Software Solution (an Abstract Software Solution) for Software Generation" href="about:blank#Defining_an_Input-Calculate-Output_(ICO)_Software_Solution_(an_Abstract_Software_Solution)_for_Software_Generation" class="internal-link" target="_self" rel="noopener nofollow">Defining an Input-Calculate-Output (ICO) Software Solution (an Abstract Software Solution) for Software Generation</a>) to a (2) specific mathematical problem (<a data-href="#Defining the Mathematical Problem First" href="about:blank#Defining_the_Mathematical_Problem_First" class="internal-link" target="_self" rel="noopener nofollow">Defining the Mathematical Problem First</a>). Our capture of this information (that we're presenting a software problem nor an abstract solution) is scattered across bits and pieces of Drasil's codebase. drasil-docLang contains much of that. Should we enrich the Doc.srs <a data-href="CI" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ci.html" class="internal-link" target="_self" rel="noopener nofollow">CI</a>, these two pieces of information should be related under the Doc.srs hat.<br>Returning to the point of "the SI defines 'Projectile'," "Projectile" is evidently overloaded. Does it refer to the software requirements? The specific mathematical problem? The stuff we intend to generate with the SI? All? The first two? I'm not sure.<br><br>The implicit software problem is an ICO style computation software. In the case of the SI, we're heavily specialized to Drasil's existing case studies, but it should be more general, and thus we can and should refer to this as an "abstract software/solution" (AS; which is approximately the same as a "software requirements specification"). Before defining the AS, we need to define what the AS is a solution for (i.e., what the problem is).<br>
+  Note: The "ICO" part of the SI is implicit. There is no word that specifically ties together the fields discussed here under an "ICO" hat.
+<br><br>The problem has two components to it:<br>
+<br>Meta-information (containing background information about the problem, sources for the problem, authorship, etc.).
+<br>A comprehensive mathematical description of the problem.
+<br><br>The metainformation for the calculation problem begins with: a title, authors, and rationale for why bothering with encoding this at all. Yes, the title is metainformation. The relevant parts of the SI are as follows:<br>  _sys         = projectileTitle,
+  _authors     = [samCrawford, brooks, spencerSmith],
+  _motivation  = [motivation],
+  _background  = [background],
+<br>Excavating further:<br>
+<br>projectileTitle is a <a data-href="CI" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/ci.html" class="internal-link" target="_self" rel="noopener nofollow">CI</a> with a UID (projectileTitle), term (a proper noun: "Projectile"), and an abbreviation ("Projectile").
+<br>[samCrawford, brooks, spencerSmith] is a list of Persons, each with a "Western" name set as the "kind" for each of he authors.
+<br>motivation is a <a data-href="Sentence" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/sentence.html" class="internal-link" target="_self" rel="noopener nofollow">Sentence</a> encoding "<a data-tooltip-position="top" aria-label="Projectile (ConceptChunk)" data-href="Projectile (ConceptChunk)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/projectile-(conceptchunk).html" class="internal-link" target="_self" rel="noopener nofollow">Projectile</a> <a data-tooltip-position="top" aria-label="motion (ConceptChunk)" data-href="motion (ConceptChunk)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/motion-(conceptchunk).html" class="internal-link" target="_self" rel="noopener nofollow">motion</a> is a common <a data-tooltip-position="top" aria-label="problem (IdeaDict)" data-href="problem (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/problem-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">problem</a> in <a data-tooltip-position="top" aria-label="physics (ConceptChunk)" data-href="physics (ConceptChunk)" href="physics (ConceptChunk)" class="internal-link" target="_self" rel="noopener nofollow">physics</a>."
+<br>background is a <a data-href="Sentence" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/sentence.html" class="internal-link" target="_self" rel="noopener nofollow">Sentence</a> encoding "Common examples of <a data-tooltip-position="top" aria-label="Projectile (ConceptChunk)" data-href="Projectile (ConceptChunk)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/projectile-(conceptchunk).html" class="internal-link" target="_self" rel="noopener nofollow">projectile</a> <a data-tooltip-position="top" aria-label="motion (ConceptChunk)" data-href="motion (ConceptChunk)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/motion-(conceptchunk).html" class="internal-link" target="_self" rel="noopener nofollow">motion</a> include ballistics <a data-tooltip-position="top" aria-label="problem (IdeaDict)" data-href="problem (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/problem-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">problem</a>s (missiles and bullets) and the flight of the balls in various sports (baseball, golf, football, etc.)."
+<br>This meta-information implicitly explains why building a software for this software problem is justified, and gives rationale for building this specific software.<br>I believe this metainformation also implicitly brings about the "Characteristics of the Intended Reader" into scope as well, bringing about what DSLs, terms (terminology in general), theories, etc. are relevant to us and into scope. We don't explicitly have this written down anywhere, but it brings about the swath of theory needed to possibly discuss the mathematical description of the problem (e.g., what is a position, what is 2D collision, what is a launcher/cannon, target, and projectile, what are the kinematics equations, etc.). All of these need to be defined before we can even create the meta-information. For example, Projectile, motion, and physics are presumed at this level and are expected to be used in the <a data-href="#Mathematical Description" href="about:blank#Mathematical_Description" class="internal-link" target="_self" rel="noopener nofollow">Mathematical Description</a>.<br><br>The mathematical description defines a specific calculation problem (knowns/unknowns). Here, that specific calculation problem is the "Projectile target hit estimator/calculator." This is formed by the following code:<br>  _purpose     = [purp],
+  _inputs      = inputs,
+  _outputs     = outputs,
+<br>
+<br>purp is a <a data-href="Sentence" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/sentence.html" class="internal-link" target="_self" rel="noopener nofollow">Sentence</a> encoding "Predict whether a launched <a data-tooltip-position="top" aria-label="Projectile (ConceptChunk)" data-href="Projectile (ConceptChunk)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/projectile-(conceptchunk).html" class="internal-link" target="_self" rel="noopener nofollow">projectile</a> hits its <a data-tooltip-position="top" aria-label="target (ConceptChunk)" data-href="target (ConceptChunk)" href="target (ConceptChunk)" class="internal-link" target="_self" rel="noopener nofollow">target</a>" (i.e., an English description of the common physics knowns/unknowns problem for which the software would be helpful for solving).
+<br>inputs is a list of three <a data-href="QuantityDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/quantitydict.html" class="internal-link" target="_self" rel="noopener nofollow">QuantityDict</a>s extracted from <a data-href="ConstrConcept" href="ConstrConcept" class="internal-link" target="_self" rel="noopener nofollow">ConstrConcept</a>s: <a data-tooltip-position="top" aria-label="launch speed (ConstrConcept)" data-href="launch speed (ConstrConcept)" href="launch speed (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">launch speed</a>, <a data-tooltip-position="top" aria-label="launch angle (ConstrConcept)" data-href="launch angle (ConstrConcept)" href="launch angle (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">launch angle</a>, and <a data-tooltip-position="top" aria-label="target position (ConstrConcept)" data-href="target position (ConstrConcept)" href="target position (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">target position</a>.
+<br>outputs is a list of three <a data-href="QuantityDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/quantitydict.html" class="internal-link" target="_self" rel="noopener nofollow">QuantityDict</a>s: <a data-tooltip-position="top" aria-label="message (QuantityDict)" data-href="message (QuantityDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/quantitydicts/message-(quantitydict).html" class="internal-link" target="_self" rel="noopener nofollow">message</a> and two extracted from <a data-href="ConstrConcept" href="ConstrConcept" class="internal-link" target="_self" rel="noopener nofollow">ConstrConcept</a>s: <a data-tooltip-position="top" aria-label="offset (ConstrConcept)" data-href="offset (ConstrConcept)" href="offset (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">offset)</a> and <a data-tooltip-position="top" aria-label="flight duration (ConstrConcept)" data-href="flight duration (ConstrConcept)" href="flight duration (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">flight duration</a>.
+<br>This mathematical problem description does not imply a solution exists. However, it implies a problem where there is some unknown function  such that . It only defines an abstract problem. The specific problem and specific solution are defined the abstract software.<br><br> Finally, we can return to the abstract software/solution. Abstract here is in the sense that it is a model for a software family. From another point of view, it is a concrete solution to an abstract mathematical problem because it needs to contain enough information such that a human could use its knowledge to calculate solutions for specific inputs on their own.<br>To define the abstract solution, we carve out a scope (assumptions) for which we can define . As per the Smith et al template, this also means defining  from sound theory. This may mean a few things:<br>
+<br>That we're only looking to carve out a solution for a subset of the inputs. Perhaps because the problem is too generic and is unknown for many input combinations.
+<br>That we need more inputs to solve this or want to add more inputs to future-proof the software. We don't do this in Projectile, but we could easily have a default gravitational acceleration constant (e.g., Earth's ) that becomes an input variable.
+<br>That we add extra outputs (e.g., because we have intermediate variables of interest to users of the software and want to spit out debug information, or that we want to add pretty output messages).
+<br>The abstract software is defined by the following record items:<br>  _scope       = [scope],
+  _constants   = constants,
+  _constraints = map cnstrw constrained,
+  _quants      = symbols, -- _All_ relevant variables (including immediate variables).
+  _datadefs    = dataDefs, -- "Let" bindings of variables (?).
+  _instModels  = iMods,
+<br>
+<br>
+scope is a <a data-href="Sentence" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/sentence.html" class="internal-link" target="_self" rel="noopener nofollow">Sentence</a> encoding "The <a data-tooltip-position="top" aria-label="analysis (IdeaDict)" data-href="analysis (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/analysis-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">analysis</a> of a <a data-tooltip-position="top" aria-label="two-dimensional (CI)" data-href="two-dimensional (CI)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/cis/two-dimensional-(ci).html" class="internal-link" target="_self" rel="noopener nofollow">two-dimensional</a> (2D), <a data-tooltip-position="top" aria-label="Projectile (ConceptChunk)" data-href="Projectile (ConceptChunk)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/projectile-(conceptchunk).html" class="internal-link" target="_self" rel="noopener nofollow">projectile</a> <a data-tooltip-position="top" aria-label="motion (ConceptChunk)" data-href="motion (ConceptChunk)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/motion-(conceptchunk).html" class="internal-link" target="_self" rel="noopener nofollow">motion</a> <a data-tooltip-position="top" aria-label="problem (IdeaDict)" data-href="problem (IdeaDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/problem-(ideadict).html" class="internal-link" target="_self" rel="noopener nofollow">problem</a> with <a data-tooltip-position="top" aria-label="constant acceleration (UnitalChunk)" data-href="constant acceleration (UnitalChunk)" href="constant acceleration (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">constant acceleration</a>" (i.e., an English summary of the scope the solution is relevant to).
+
+<br>
+constants is a list of constant variable assumptions (<a data-href="ConstQDef" href="ConstQDef" class="internal-link" target="_self" rel="noopener nofollow">ConstQDef</a>s): <a data-tooltip-position="top" aria-label="gravitational acceleration (ConstQDef)" data-href="gravitational acceleration (ConstQDef)" href="gravitational acceleration (ConstQDef)" class="internal-link" target="_self" rel="noopener nofollow">gravitational acceleration</a>, <a data-tooltip-position="top" aria-label="pi (ConstQDef)" data-href="pi (ConstQDef)" href="pi (ConstQDef)" class="internal-link" target="_self" rel="noopener nofollow">pi</a>, and a <a data-tooltip-position="top" aria-label="tolerance (ConstQDef)" data-href="tolerance (ConstQDef)" href="tolerance (ConstQDef)" class="internal-link" target="_self" rel="noopener nofollow">tolerance</a>.
+
+<br>
+constraints is a list of <a data-href="ConstrainedChunk" href="ConstrainedChunk" class="internal-link" target="_self" rel="noopener nofollow">ConstrainedChunk</a>s extract from <a data-href="ConstrConcept" href="ConstrConcept" class="internal-link" target="_self" rel="noopener nofollow">ConstrConcept</a>s: <a data-tooltip-position="top" aria-label="flight duration (ConstrConcept)" data-href="flight duration (ConstrConcept)" href="flight duration (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">flight duration</a>, <a data-tooltip-position="top" aria-label="landing position (ConstrConcept)" data-href="landing position (ConstrConcept)" href="landing position (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">landing position</a>, <a data-tooltip-position="top" aria-label="launch angle (ConstrConcept)" data-href="launch angle (ConstrConcept)" href="launch angle (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">launch angle</a>, <a data-tooltip-position="top" aria-label="launch speed (ConstrConcept)" data-href="launch speed (ConstrConcept)" href="launch speed (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">launch speed</a>, <a data-tooltip-position="top" aria-label="offset distance (ConstrConcept)" data-href="offset distance (ConstrConcept)" href="offset distance (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">offset distance</a>, and <a data-tooltip-position="top" aria-label="target position (ConstrConcept)" data-href="target position (ConstrConcept)" href="target position (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">target position</a>. This imposes constraints on any variables. For example, if the abstract solution were only relevant to a subset of the input domain, we could impose the restriction with constraints placed on the input symbols.
+
+<br>
+quants is a list of all relevant variables to the solution (as <a data-href="QuantityDict" href="drasil/designing-drasil's-chunks-2025/analysis/chunk-types/quantitydict.html" class="internal-link" target="_self" rel="noopener nofollow">QuantityDict</a>s). All but <a data-href="message (QuantityDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/quantitydicts/message-(quantitydict).html" class="internal-link" target="_self" rel="noopener nofollow">message (QuantityDict)</a> are extracted from other things, including:
+
+<br><a data-href="ConstQDef" href="ConstQDef" class="internal-link" target="_self" rel="noopener nofollow">ConstQDef</a>s:
+
+<br><a data-tooltip-position="top" aria-label="gravitational acceleration (ConstQDef)" data-href="gravitational acceleration (ConstQDef)" href="gravitational acceleration (ConstQDef)" class="internal-link" target="_self" rel="noopener nofollow">gravitational acceleration</a>,
+<br><a data-tooltip-position="top" aria-label="pi (ConstQDef)" data-href="pi (ConstQDef)" href="pi (ConstQDef)" class="internal-link" target="_self" rel="noopener nofollow">pi</a>, and
+<br><a data-tooltip-position="top" aria-label="tolerance (ConstQDef)" data-href="tolerance (ConstQDef)" href="tolerance (ConstQDef)" class="internal-link" target="_self" rel="noopener nofollow">tolerance</a>.
+
+
+<br><a data-href="ConstrConcept" href="ConstrConcept" class="internal-link" target="_self" rel="noopener nofollow">ConstrConcept</a>s:
+
+<br><a data-tooltip-position="top" aria-label="flight duration (ConstrConcept)" data-href="flight duration (ConstrConcept)" href="flight duration (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">flight duration</a>,
+<br><a data-tooltip-position="top" aria-label="landing position (ConstrConcept)" data-href="landing position (ConstrConcept)" href="landing position (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">landing position</a>,
+<br><a data-tooltip-position="top" aria-label="launch angle (ConstrConcept)" data-href="launch angle (ConstrConcept)" href="launch angle (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">launch angle</a>,
+<br><a data-tooltip-position="top" aria-label="launch speed (ConstrConcept)" data-href="launch speed (ConstrConcept)" href="launch speed (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">launch speed</a>,
+<br><a data-tooltip-position="top" aria-label="offset distance (ConstrConcept)" data-href="offset distance (ConstrConcept)" href="offset distance (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">offset distance</a>, and
+<br><a data-tooltip-position="top" aria-label="target position (ConstrConcept)" data-href="target position (ConstrConcept)" href="target position (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">target position</a>.
+
+
+<br><a data-href="UnitalChunk" href="UnitalChunk" class="internal-link" target="_self" rel="noopener nofollow">UnitalChunk</a>s:
+
+<br><a data-tooltip-position="top" aria-label="acceleration (UnitalChunk)" data-href="acceleration (UnitalChunk)" href="acceleration (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">acceleration</a>,
+<br><a data-tooltip-position="top" aria-label="constant acceleration (UnitalChunk)" data-href="constant acceleration (UnitalChunk)" href="constant acceleration (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">constant acceleration</a>,
+<br><a data-tooltip-position="top" aria-label="initial position (UnitalChunk)" data-href="initial position (UnitalChunk)" href="initial position (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">initial position</a>,
+<br><a data-tooltip-position="top" aria-label="initial speed (UnitalChunk)" data-href="initial speed (UnitalChunk)" href="initial speed (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">initial speed</a>,
+<br><a data-tooltip-position="top" aria-label="initial velocity (UnitalChunk)" data-href="initial velocity (UnitalChunk)" href="initial velocity (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">initial velocity</a>,
+<br><a data-tooltip-position="top" aria-label="x-component of the initial position (UnitalChunk)" data-href="x-component of the initial position (UnitalChunk)" href="x-component of the initial position (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">x-component of the initial position</a>,
+<br><a data-tooltip-position="top" aria-label="y-component of the initial position (UnitalChunk)" data-href="y-component of the initial position (UnitalChunk)" href="y-component of the initial position (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">y-component of the initial position</a>,
+<br><a data-tooltip-position="top" aria-label="x-component of the initial velocity (UnitalChunk)" data-href="x-component of the initial velocity (UnitalChunk)" href="x-component of the initial velocity (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">x-component of the initial velocity</a>,
+<br><a data-tooltip-position="top" aria-label="y-component of the initial velocity (UnitalChunk)" data-href="y-component of the initial velocity (UnitalChunk)" href="y-component of the initial velocity (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">y-component of the initial velocity</a>,
+<br><a data-tooltip-position="top" aria-label="position (UnitalChunk)" data-href="position (UnitalChunk)" href="position (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">position</a>,
+<br><a data-tooltip-position="top" aria-label="scalar position (UnitalChunk)" data-href="scalar position (UnitalChunk)" href="scalar position (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">scalar position</a>,
+<br><a data-tooltip-position="top" aria-label="1D position (UnitalChunk)" data-href="1D position (UnitalChunk)" href="1D position (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">1D position</a>,
+<br><a data-tooltip-position="top" aria-label="1D speed (UnitalChunk)" data-href="1D speed (UnitalChunk)" href="1D speed (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">1D speed</a>,
+<br><a data-tooltip-position="top" aria-label="time (UnitalChunk)" data-href="time (UnitalChunk)" href="time (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">time</a>,
+<br><a data-tooltip-position="top" aria-label="velocity (UnitalChunk)" data-href="velocity (UnitalChunk)" href="velocity (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">velocity</a>,
+<br><a data-tooltip-position="top" aria-label="x-component of the acceleration (UnitalChunk)" data-href="x-component of the acceleration (UnitalChunk)" href="x-component of the acceleration (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">x-component of the acceleration</a>,
+<br><a data-tooltip-position="top" aria-label="x-component of the constant acceleration (UnitalChunk)" data-href="x-component of the constant acceleration (UnitalChunk)" href="x-component of the constant acceleration (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">x-component of the constant acceleration</a>,
+<br><a data-tooltip-position="top" aria-label="x-component of the position (UnitalChunk)" data-href="x-component of the position (UnitalChunk)" href="x-component of the position (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">x-component of the position</a>,
+<br><a data-tooltip-position="top" aria-label="x-component of the velocity (UnitalChunk)" data-href="x-component of the velocity (UnitalChunk)" href="x-component of the velocity (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">x-component of the velocity</a>,
+<br><a data-tooltip-position="top" aria-label="y-component of the acceleration (UnitalChunk)" data-href="y-component of the acceleration (UnitalChunk)" href="y-component of the acceleration (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">y-component of the acceleration</a>,
+<br><a data-tooltip-position="top" aria-label="y-component of the constant acceleration (UnitalChunk)" data-href="y-component of the constant acceleration (UnitalChunk)" href="y-component of the constant acceleration (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">y-component of the constant acceleration</a>,
+<br><a data-tooltip-position="top" aria-label="y-component of the position (UnitalChunk)" data-href="y-component of the position (UnitalChunk)" href="y-component of the position (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">y-component of the position</a>, and
+<br><a data-tooltip-position="top" aria-label="y-component of the velocity (UnitalChunk)" data-href="y-component of the velocity (UnitalChunk)" href="y-component of the velocity (UnitalChunk)" class="internal-link" target="_self" rel="noopener nofollow">y-component of the velocity</a>.
+
+
+
+
+<br>
+iMods is a list of the <a data-href="InstanceModel" href="InstanceModel" class="internal-link" target="_self" rel="noopener nofollow">InstanceModel</a>s relevant to Projectile. These implicitly form a system of equations that can be solved to calculate the output variables. Rather, for code generation to work, these <a data-href="InstanceModel" href="InstanceModel" class="internal-link" target="_self" rel="noopener nofollow">InstanceModel</a>s need to form a system of equations such that this is possible. We will return to this shortly. 
+Note: The calculation scheme may have "holes" that need to be filled in by the code generator. For example, ODEs need choices to be made about which method/library to use.
+
+<br>
+Unfortunately, _inputs and _outputs are not divided into two lists each (one containing purely the abstract problem inputs/outputs, and the other containing the specific inputs/outputs the software solution schematic will actually work with). However, if they were, the below items might be moved here:
+
+<br>inputs: no change, or possibly the constants moved into optional inputs.
+<br>outputs: <a data-href="message (QuantityDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/quantitydicts/message-(quantitydict).html" class="internal-link" target="_self" rel="noopener nofollow">message (QuantityDict)</a>.
+
+
+<br>At this point, everything necessary for a software generator to be defined and configured (to generate a solution for the Projectile problem) is here and ready. Returning to the system of equations formed by the <a data-href="InstanceModel" href="InstanceModel" class="internal-link" target="_self" rel="noopener nofollow">InstanceModel</a>s, the following is the calculation scheme:<br>
+<br>
+By <a data-href="Calculation of landing time (InstanceModel)" href="Calculation of landing time (InstanceModel)" class="internal-link" target="_self" rel="noopener nofollow">Calculation of landing time (InstanceModel)</a>, we define <a data-href="flight duration (ConstrConcept)" href="flight duration (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">flight duration (ConstrConcept)</a> as:
+
+
+<br>
+By <a data-href="Calculating of landing position (InstanceModel)" href="Calculating of landing position (InstanceModel)" class="internal-link" target="_self" rel="noopener nofollow">Calculating of landing position (InstanceModel)</a>, we define <a data-href="landing position (ConstrConcept)" href="landing position (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">landing position (ConstrConcept)</a> as:
+
+
+<br>
+By <a data-href="Offset (InstanceModel)" href="Offset (InstanceModel)" class="internal-link" target="_self" rel="noopener nofollow">Offset (InstanceModel)</a>, we define <a data-href="offset (ConstrConcept)" href="offset (ConstrConcept)" class="internal-link" target="_self" rel="noopener nofollow">offset (ConstrConcept)</a> as:
+
+
+<br>
+By <a data-href="Output message (InstanceModel)" href="Output message (InstanceModel)" class="internal-link" target="_self" rel="noopener nofollow">Output message (InstanceModel)</a>, we define <a data-href="message (QuantityDict)" href="drasil/designing-drasil's-chunks-2025/analysis/chunks/quantitydicts/message-(quantitydict).html" class="internal-link" target="_self" rel="noopener nofollow">message (QuantityDict)</a> as:
+
+
+<br>This corresponds with the order of operations the generated Python code follows (taking <a data-tooltip-position="top" aria-label="https://github.com/JacquesCarette/Drasil/blob/5705da6c270bd1839801037c71a5e8466072e655/code/stable/projectile/projectile_m_p_nol_b_u_v_d/src/python/Control.py#L15-L20" rel="noopener nofollow" class="external-link" href="https://github.com/JacquesCarette/Drasil/blob/5705da6c270bd1839801037c71a5e8466072e655/code/stable/projectile/projectile_m_p_nol_b_u_v_d/src/python/Control.py#L15-L20" target="_blank">projectile_m_p_nol_b_u_v_d</a>, for example):<br>inParams = InputParameters.InputParameters(filename)
+t_flight = Calculations.func_t_flight(inParams, g)
+p_land = Calculations.func_p_land(inParams, g)
+d_offset = Calculations.func_d_offset(inParams, p_land)
+s = Calculations.func_s(inParams, epsilon, d_offset)
+OutputFormat.write_output(s, d_offset, t_flight)
+<br><br>There are three other components to the SI that are irrelevant to the "essence" of "Projectile:"<br>  _sysinfodb   = symbMap,
+  _usedinfodb. = usedDB,
+  _configFiles = []
+<br><br>
+<br>sysinfodb/symbMap: We brand each of our chunks with <a data-href="UID" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/uid.html" class="internal-link" target="_self" rel="noopener nofollow">UID</a>s. We expect that each time a chunk needs to refer to another, it stores the other's <a data-href="UID" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/uid.html" class="internal-link" target="_self" rel="noopener nofollow">UID</a> rather than a copy of the other entirely. This gives us the ability to see the dependency tree of our <a data-tooltip-position="top" aria-label="Chunk" data-href="Chunk" href="drasil/terminology/chunk.html" class="internal-link" target="_self" rel="noopener nofollow">chunk</a>s. This is an operational issue of how we're using Haskell to:
+
+<br>Encode our chunk types.
+<br>Build instances of our chunk types.
+<br>Interpret our chunk instances for software generation.<br>
+I will not explain all of our chunks from the <a data-href="ChunkDB" href="drasil/designing-drasil's-chunks-2025/analysis/chunkdb.html" class="internal-link" target="_self" rel="noopener nofollow">ChunkDB</a> here. The only ones referenced are the ones immediately relevant to the <a data-href="Projectile System" href="drasil/designing-drasil's-chunks-2025/analysis/projectile-system.html" class="internal-link" target="_self" rel="noopener nofollow">Projectile System</a>.
+
+
+<br>usedinfodb/usedDB: <a data-tooltip-position="top" aria-label="https://github.com/JacquesCarette/Drasil/issues/1661#issuecomment-1021450950" rel="noopener nofollow" class="external-link" href="https://github.com/JacquesCarette/Drasil/issues/1661#issuecomment-1021450950" target="_blank">This is a wart</a>. It is marked for removal once we can handle the operational issues properly.
+<br><br>configFiles is only used for GlassBR. It contains a list of files necessary for the software problem to run.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/projectile-system.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Projectile System.md</guid><pubDate>Mon, 07 Apr 2025 05:05:37 GMT</pubDate></item><item><title><![CDATA[Theory]]></title><description><![CDATA[ 
+ <br>TODO: I believe we are commiting to "Naturalism" (<a rel="noopener nofollow" class="external-link" href="https://plato.stanford.edu/entries/philosophy-mathematics/#NatInd" target="_blank">https://plato.stanford.edu/entries/philosophy-mathematics/#NatInd</a>) with our theories. What does this mean? That we don't care for pure formalism and mathematics, but accept our best scientific theories as truth despite being backed only by empirical evidence. <br><br>With the Smith et al. template, we problem that software aims to "solve"/"help solving"<br>(5) Now, the solution can come from anywhere and/or nowhere, but we make a choice: that if it comes from anywhere, it is grounded in science and theory. This is arguably brought about as a restriction by the SRS "notice."]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/analysis/theory.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Analysis/Theory.md</guid><pubDate>Sun, 06 Apr 2025 20:46:24 GMT</pubDate></item><item><title><![CDATA[Projectile]]></title><description><![CDATA[ 
+ <br>Projectile is the codename of one of <a data-href="Drasil" href="drasil/terminology/drasil.html" class="internal-link" target="_self" rel="noopener nofollow">Drasil</a>'s case studies. Projectile examines the development a simple <a data-tooltip-position="top" aria-label="Input-Calculate-Output (ICO)" data-href="Input-Calculate-Output (ICO)" href="terminology/input-calculate-output-(ico).html" class="internal-link" target="_self" rel="noopener nofollow">ICO</a>-style software that predicts if a projectile fired under specific conditions would hit a target at a defined location.]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/projectile.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/Projectile.md</guid><pubDate>Sat, 05 Apr 2025 04:46:33 GMT</pubDate></item><item><title><![CDATA[SystemInformation]]></title><description><![CDATA[ 
+ <br>-- | Data structure for holding all of the requisite information about a system
+-- to be used in artifact generation.
+data SystemInformation where
+ SI :: (CommonIdea a, Idea a,
+  Idea b,
+  Quantity e, Eq e, MayHaveUnit e,
+  Quantity h, MayHaveUnit h,
+  Quantity i, MayHaveUnit i,
+  HasUID j, Constrained j) =&gt; 
+  { _sys         :: a
+  , _kind        :: b
+  , _authors     :: People
+  , _purpose     :: Purpose
+  , _background  :: Background
+  , _scope       :: Scope
+  , _motivation  :: Motivation
+  , _quants      :: [e]
+  , _instModels  :: [InstanceModel]
+  , _datadefs    :: [DataDefinition]
+  , _configFiles :: [String]
+  , _inputs      :: [h]
+  , _outputs     :: [i]
+  , _constraints :: [j]
+  , _constants   :: [ConstQDef]
+  , _sysinfodb   :: ChunkDB
+  , _usedinfodb  :: ChunkDB
+  } -&gt; SystemInformation
+<br><br><a data-tooltip-position="top" aria-label="Drasil/Designing Drasil's Chunks 2025/SystemInformation" data-href="Drasil/Designing Drasil's Chunks 2025/SystemInformation" href="drasil/designing-drasil's-chunks-2025/systeminformation.html" class="internal-link" target="_self" rel="noopener nofollow">SystemInformation</a> (SI) is <a data-href="Drasil" href="drasil/terminology/drasil.html" class="internal-link" target="_self" rel="noopener nofollow">Drasil</a>'s equivalent of a "root/single model" (<a data-href="PaigeOstroff2002SingleModelPrinciple" href="zotero/paigeostroff2002singlemodelprinciple.html" class="internal-link" target="_self" rel="noopener nofollow">PaigeOstroff2002SingleModelPrinciple</a>). It is the model/thing that all "generation" should begin from (and does begin from). The title of each of our case studies are effectively defined by their SIs.<br>SI was grown for operational purposes of developing Drasil's existing case studies. Thus, its design has become confused and the SI data type has become bloated with information very loosely defined. Rather than explaining what SI is, which we don't have a good definition for yet, we will try to excavate such by understanding how an SI assigns meaning to <a data-href="Drasil" href="drasil/terminology/drasil.html" class="internal-link" target="_self" rel="noopener nofollow">Drasil</a>'s <a data-href="Projectile" href="drasil/designing-drasil's-chunks-2025/projectile.html" class="internal-link" target="_self" rel="noopener nofollow">Projectile</a> case study (see <a data-href="Projectile System" href="drasil/designing-drasil's-chunks-2025/analysis/projectile-system.html" class="internal-link" target="_self" rel="noopener nofollow">Projectile System</a>).]]></description><link>drasil/designing-drasil&apos;s-chunks-2025/systeminformation.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025/SystemInformation.md</guid><pubDate>Sat, 05 Apr 2025 04:35:34 GMT</pubDate></item><item><title><![CDATA[Chunk]]></title><description><![CDATA[<a class="tag" href="?query=tag:todo" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#todo</a> 
+ <br><a href=".?query=tag:todo" class="tag" target="_blank" rel="noopener nofollow">#todo</a> ]]></description><link>drasil/terminology/chunk.html</link><guid isPermaLink="false">Drasil/Terminology/Chunk.md</guid><pubDate>Mon, 07 Apr 2025 05:14:01 GMT</pubDate></item><item><title><![CDATA[Drasil]]></title><description><![CDATA[ 
+ <br>Drasil is the name of a research project studying knowledge engineering for software generation.]]></description><link>drasil/terminology/drasil.html</link><guid isPermaLink="false">Drasil/Terminology/Drasil.md</guid><pubDate>Mon, 07 Apr 2025 04:43:39 GMT</pubDate></item><item><title><![CDATA[well-understood]]></title><description><![CDATA[<a class="tag" href="?query=tag:todo" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#todo</a> 
+ <br><a href=".?query=tag:todo" class="tag" target="_blank" rel="noopener nofollow">#todo</a> <br>See <a data-href="Carette2023Generating" href="zotero/carette2023generating.html" class="internal-link" target="_self" rel="noopener nofollow">Carette2023Generating</a>]]></description><link>drasil/terminology/well-understood.html</link><guid isPermaLink="false">Drasil/Terminology/well-understood.md</guid><pubDate>Mon, 07 Apr 2025 05:10:13 GMT</pubDate></item><item><title><![CDATA[Designing Drasil's Chunks 2025 Status]]></title><description><![CDATA[ 
+ <br>TODOs:<br>
+<br>Find examples of use of all type classes.
+<br>Pages tagged with #todo:<br><br><a data-tooltip-position="top" aria-label="Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/IsUnit.md" data-href="Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/IsUnit.md" href="drasil/designing-drasil's-chunks-2025/analysis/typeclasses/isunit.html" class="internal-link" target="_self" rel="noopener nofollow">IsUnit</a><br><a data-tooltip-position="top" aria-label="Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/USymb.md" data-href="Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/USymb.md" href="drasil/designing-drasil's-chunks-2025/analysis/atoms/usymb.html" class="internal-link" target="_self" rel="noopener nofollow">USymb</a><br><a data-tooltip-position="top" aria-label="Drasil/Designing Drasil's Chunks 2025/Analysis/ChunkDB.md" data-href="Drasil/Designing Drasil's Chunks 2025/Analysis/ChunkDB.md" href="drasil/designing-drasil's-chunks-2025/analysis/chunkdb.html" class="internal-link" target="_self" rel="noopener nofollow">ChunkDB</a><br>]]></description><link>drasil/designing-drasil&apos;s-chunks-2025-status.html</link><guid isPermaLink="false">Drasil/Designing Drasil&apos;s Chunks 2025 Status.md</guid><pubDate>Mon, 07 Apr 2025 06:42:59 GMT</pubDate></item></channel></rss>
