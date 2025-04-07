@@ -1,11 +1,21 @@
 {
   "vaultName": "Notes",
-  "lastExport": 1744047650498,
+  "lastExport": 1744069152488,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager show-inline-title show-ribbon theme-light",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Physical.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Software.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Inclusive/Exc.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Inclusive/Inc.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Spaces/Real.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Constraint.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Expr.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Literal.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/ModelExpr.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/RealInterval.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Sentence.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Space.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Stage.md",
@@ -16,14 +26,25 @@
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/USymb.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/CI.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptChunk.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrainedChunk.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrConcept.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/DefinedQuantityDict.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/IdeaDict.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/QDefinition.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/QuantityDict.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/UnitalChunk.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/UnitDefn.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/CIs/1D position (CI).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/CIs/Software Requirements Specification (CI).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/CIs/two-dimensional (CI).md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/1D position (ConceptChunk).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/motion (ConceptChunk).md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/position (ConceptChunk).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/Projectile (ConceptChunk).md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/speed (ConceptChunk).md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/velocity (ConceptChunk).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/IdeaDicts/analysis (IdeaDict).md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/IdeaDicts/constant (IdeaDict).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/IdeaDicts/Mathematics (IdeaDict).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/IdeaDicts/Physics (IdeaDict).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/IdeaDicts/problem (IdeaDict).md",
@@ -33,10 +54,18 @@
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/IdeaDicts/Software Requirements (IdeaDict).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/IdeaDicts/Specification (IdeaDict).md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/QuantityDicts/message (QuantityDict).md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/UnitalChunks/1D position (UnitalChunk).md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/UnitDefns/Metre (UnitDefn).md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstQDef.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstraintE.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/CommonIdea.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/ConceptDomain.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/Constrained.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefinesQuantity.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/Definition.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/Express.md",
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasReasVal.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasSpace.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasSymbol.md",
     "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasUID.md",
@@ -457,315 +486,489 @@
       "dependencies": []
     },
     "Drasil/Designing Drasil's Chunks 2025 Status.md": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 369,
       "exportedPath": "drasil/designing-drasil's-chunks-2025-status.html",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
     },
     "lib/fonts/mathjax_zero.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 1368,
       "exportedPath": "lib/fonts/mathjax_zero.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 34160,
       "exportedPath": "lib/fonts/mathjax_main-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-bold.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 34464,
       "exportedPath": "lib/fonts/mathjax_main-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_math-italic.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 19360,
       "exportedPath": "lib/fonts/mathjax_math-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-italic.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 20832,
       "exportedPath": "lib/fonts/mathjax_main-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_math-bolditalic.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 19776,
       "exportedPath": "lib/fonts/mathjax_math-bolditalic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size1-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 5792,
       "exportedPath": "lib/fonts/mathjax_size1-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size2-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 5464,
       "exportedPath": "lib/fonts/mathjax_size2-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size3-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 3244,
       "exportedPath": "lib/fonts/mathjax_size3-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size4-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 5148,
       "exportedPath": "lib/fonts/mathjax_size4-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_ams-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 40808,
       "exportedPath": "lib/fonts/mathjax_ams-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_calligraphic-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 9600,
       "exportedPath": "lib/fonts/mathjax_calligraphic-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_calligraphic-bold.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 9908,
       "exportedPath": "lib/fonts/mathjax_calligraphic-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_fraktur-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 21480,
       "exportedPath": "lib/fonts/mathjax_fraktur-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_fraktur-bold.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 22340,
       "exportedPath": "lib/fonts/mathjax_fraktur-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 12660,
       "exportedPath": "lib/fonts/mathjax_sansserif-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-bold.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 15944,
       "exportedPath": "lib/fonts/mathjax_sansserif-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-italic.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 14628,
       "exportedPath": "lib/fonts/mathjax_sansserif-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_script-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 11852,
       "exportedPath": "lib/fonts/mathjax_script-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_typewriter-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 17604,
       "exportedPath": "lib/fonts/mathjax_typewriter-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_vector-regular.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 1136,
       "exportedPath": "lib/fonts/mathjax_vector-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_vector-bold.woff": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 1116,
       "exportedPath": "lib/fonts/mathjax_vector-bold.woff",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1744047650498,
-      "sourceSize": 26985,
+      "modifiedTime": 1744069152488,
+      "sourceSize": 41788,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1744047650498,
-      "sourceSize": 6292,
+      "modifiedTime": 1744069152488,
+      "sourceSize": 10234,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 137466,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 285,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 35534,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1744047650498,
+      "modifiedTime": 1744069152488,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Physical.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 85,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/constraintreason/physical.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Software.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 87,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/constraintreason/software.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Inclusive/Exc.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 10,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/inclusive/exc.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Inclusive/Inc.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 10,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/inclusive/inc.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Spaces/Real.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 38,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/spaces/real.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Constraint.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 993,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/constraint.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Expr.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 6,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/expr.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/Literal.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 6,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/literal.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/ModelExpr.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 6,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/modelexpr.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Atoms/RealInterval.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 858,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/atoms/realinterval.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrainedChunk.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 1154,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunk-types/constrainedchunk.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrConcept.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 1073,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunk-types/constrconcept.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/DefinedQuantityDict.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 971,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunk-types/definedquantitydict.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/QDefinition.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 494,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunk-types/qdefinition.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunk Types/UnitalChunk.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 540,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunk-types/unitalchunk.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/CIs/1D position (CI).md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 279,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunks/cis/1d-position-(ci).html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/1D position (ConceptChunk).md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 319,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/1d-position-(conceptchunk).html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/position (ConceptChunk).md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 157,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/position-(conceptchunk).html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/speed (ConceptChunk).md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 198,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/speed-(conceptchunk).html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/velocity (ConceptChunk).md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 207,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunks/conceptchunks/velocity-(conceptchunk).html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/IdeaDicts/constant (IdeaDict).md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 151,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunks/ideadicts/constant-(ideadict).html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/UnitalChunks/1D position (UnitalChunk).md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 298,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunks/unitalchunks/1d-position-(unitalchunk).html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Chunks/UnitDefns/Metre (UnitDefn).md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 132,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/chunks/unitdefns/metre-(unitdefn).html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstQDef.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 42,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/synonyms/constqdef.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstraintE.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 101,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/synonyms/constrainte.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/Constrained.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 284,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/typeclasses/constrained.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefinesQuantity.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 110,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/typeclasses/definesquantity.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 503,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/typeclasses/definingexpr.html",
+      "dependencies": []
+    },
+    "Drasil/Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasReasVal.md": {
+      "modifiedTime": 1744069152488,
+      "sourceSize": 283,
+      "exportedPath": "drasil/designing-drasil's-chunks-2025/analysis/typeclasses/hasreasval.html",
       "dependencies": []
     }
   }
