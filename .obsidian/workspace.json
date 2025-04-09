@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3e3d07486eda02df",
+        "id": "9f6dc1efe235de7e",
         "type": "tabs",
         "children": [
           {
-            "id": "0a7d995eef93a500",
+            "id": "678a3d02a3c9f9f0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,12 +168,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0a7d995eef93a500",
+  "active": "678a3d02a3c9f9f0",
   "lastOpenFiles": [
+    "Questions, Commentary, and Issues.md",
+    "Designing Drasil's Chunks 2025/SystemInformation.md",
+    "Designing Drasil's Chunks 2025 Status.md",
     "Terminology/Domain-Specific Language.md",
     "Terminology/Drasil.md",
     "Terminology/Input-Calculate-Output (ICO).md",
-    "Designing Drasil's Chunks 2025 Status.md",
     "README.md.md",
     "Bibliography/PaigeOstroff2002SingleModelPrinciple.md",
     "Bibliography/SmithAndLai2005.md",
@@ -181,7 +183,6 @@
     "Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstraintE.md",
     "Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstQDef.md",
     "Designing Drasil's Chunks 2025/Analysis/Atoms/ModelExpr.md",
-    "Designing Drasil's Chunks 2025/SystemInformation.md",
     "Terminology/Chunk.md"
   ]
 }

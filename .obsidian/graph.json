@@ -1,6 +1,6 @@
 {
   "collapse-filter": true,
-  "search": "",
+  "search": "path:\"Designing Drasil's Chunks 2025\"  ",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -53,6 +53,6 @@
   "repelStrength": 9.66145833333333,
   "linkStrength": 0.84326171875,
   "linkDistance": 250,
-  "scale": 0.41930106818086743,
+  "scale": 0.5445636542110172,
   "close": true
 }
