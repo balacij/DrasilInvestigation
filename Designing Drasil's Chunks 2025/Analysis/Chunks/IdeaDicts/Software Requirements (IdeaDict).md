@@ -1,0 +1,1 @@
+A simple [[IdeaDict]] that merges two other terms: [[Software (IdeaDict)]] and [[Requirement (IdeaDict)]].

@@ -1,0 +1,1 @@
+A `UID` is supposed to be an internal/operational-use only atom that contains a unique reference to a chunk (unique with respect to a [[ChunkDB]]).

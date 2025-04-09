@@ -1,0 +1,1 @@
+A simple [[IdeaDict]] defining "Physics" with no abbreviation.

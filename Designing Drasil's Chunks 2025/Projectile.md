@@ -1,0 +1,1 @@
+Projectile is the codename of one of [[Drasil]]'s case studies. Projectile examines the development a simple [[Input-Calculate-Output (ICO)|ICO]]-style software that predicts if a projectile fired under specific conditions would hit a target at a defined location.

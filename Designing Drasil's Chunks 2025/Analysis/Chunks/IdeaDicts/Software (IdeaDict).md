@@ -1,0 +1,1 @@
+A simple [[IdeaDict]] with a term and no abbreviation.

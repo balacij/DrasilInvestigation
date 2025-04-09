@@ -1,0 +1,1 @@
+Synonym for [[Constraint]] [[Expr]]. Indicates that this [[Constraint]] is usable in code generation.

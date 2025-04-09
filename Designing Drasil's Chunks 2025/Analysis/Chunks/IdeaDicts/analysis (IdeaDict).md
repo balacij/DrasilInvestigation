@@ -1,0 +1,1 @@
+A simple [[IdeaDict]] that defines the term "analysis" with no abbreviation.

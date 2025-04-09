@@ -1,0 +1,1 @@
+A [[CI]] whose term merges two others ([[Software Requirements (IdeaDict)]] and [[Specification (IdeaDict)]]) with an abbreviation "SRS" belonging to the [[Software Engineering (IdeaDict)]] domain.

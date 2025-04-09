@@ -1,0 +1,1 @@
+A simple [[IdeaDict]] defining "Mathematics" with no abbreviation.
