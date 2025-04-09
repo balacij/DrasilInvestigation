@@ -30,6 +30,6 @@ data SystemInformation where
 
 ## What is it?
 
-[[Drasil/Designing Drasil's Chunks 2025/SystemInformation|SystemInformation]] (SI) is [[Drasil]]'s equivalent of a "root/single model" ([[PaigeOstroff2002SingleModelPrinciple]]). It is _the_ model/thing that all "generation" should begin from (and does begin from). The title of each of our case studies are effectively defined by their SIs.
+[[SystemInformation]] (SI) is [[Drasil]]'s equivalent of a "root/single model" ([[PaigeOstroff2002SingleModelPrinciple]]). It is _the_ model/thing that all "generation" should begin from (and does begin from). The title of each of our case studies are effectively defined by their SIs.
 
 SI was grown for operational purposes of developing Drasil's existing case studies. Thus, its design has become confused and the SI data type has become bloated with information very loosely defined. Rather than explaining what SI _is_, which we don't have a good definition for yet, we will try to excavate such by understanding how an SI assigns meaning to [[Drasil]]'s [[Projectile]] case study (see [[Projectile System]]).

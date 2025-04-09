@@ -1,0 +1,58 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:\"Designing Drasil's Chunks 2025/Analysis/Atoms\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 101912
+      }
+    },
+    {
+      "query": "path:\"Designing Drasil's Chunks 2025/Analysis/Chunk Types\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16711680
+      }
+    },
+    {
+      "query": "path:\"Designing Drasil's Chunks 2025/Analysis/Chunks\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 15662848
+      }
+    },
+    {
+      "query": "path:\"Designing Drasil's Chunks 2025/Analysis/Typeclasses\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 4007167
+      }
+    },
+    {
+      "query": "path:\"Designing Drasil's Chunks 2025/Analysis/Synonyms\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16616191
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.2969970703125,
+  "repelStrength": 9.66145833333333,
+  "linkStrength": 0.84326171875,
+  "linkDistance": 250,
+  "scale": 0.41930106818086743,
+  "close": true
+}

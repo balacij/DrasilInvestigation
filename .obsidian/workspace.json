@@ -1,0 +1,177 @@
+{
+  "main": {
+    "id": "689a526747c8750c",
+    "type": "split",
+    "children": [
+      {
+        "id": "7041a696792745e9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e8f1ed456900ff9a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "efc6f0f067277cae",
+    "type": "split",
+    "children": [
+      {
+        "id": "a629e3c36f721750",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e14db0af7a94eab",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "8f6047f99f0dca2e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "170a2189c1a5976f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9e0e22f1f4d27c44",
+    "type": "split",
+    "children": [
+      {
+        "id": "78b2fd520cd661e5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "83a3a248ead8d16c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "0b04de8f77f2c6f4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "bd5f08c052aa4554",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2daeb05bb0648c77",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e8f1ed456900ff9a",
+  "lastOpenFiles": [
+    "Bibliography/PaigeOstroff2002SingleModelPrinciple.md",
+    "Bibliography/SmithAndLai2005.md",
+    "Designing Drasil's Chunks 2025 Status.md",
+    "Bibliography",
+    "Untitled.md",
+    "Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstraintE.md",
+    "Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstQDef.md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/ModelExpr.md",
+    "Designing Drasil's Chunks 2025/SystemInformation.md",
+    "Terminology/Chunk.md"
+  ]
+}
