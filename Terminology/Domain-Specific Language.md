@@ -1,0 +1,1 @@
+A syntax with a limited terminology, usually focused on a specific domain, such as regular expressions, SQL, HTML, LaTeX, etc.
