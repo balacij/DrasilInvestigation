@@ -1,1 +1,5 @@
+---
+variantOf: "[[Constraint]]"
+---
+
 A `Physical` [[Constraint|Constraint reason]] is one imposed on/by a physical system.

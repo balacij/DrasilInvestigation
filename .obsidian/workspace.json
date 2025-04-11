@@ -4,21 +4,48 @@
     "type": "split",
     "children": [
       {
-        "id": "9f6dc1efe235de7e",
+        "id": "d84512ae4af92d59",
         "type": "tabs",
         "children": [
           {
-            "id": "678a3d02a3c9f9f0",
+            "id": "e7b48884d125352a",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Physical",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Physical.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Physical\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "Constraint",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Atoms/Constraint.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Constraint\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":0},\"to\":{\"line\":20,\"ch\":0}}}"
+                },
+                {
+                  "title": "Designing Drasil's Chunks 2025 Status",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025 Status.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Designing Drasil's Chunks 2025 Status\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":4},\"to\":{\"line\":0,\"ch\":0}}}"
+                }
+              ]
+            },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Designing Drasil's Chunks 2025 Status.md",
+                "file": "Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Software.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Designing Drasil's Chunks 2025 Status"
+              "title": "Software"
             }
           }
         ]
@@ -37,6 +64,15 @@
           {
             "id": "8e14db0af7a94eab",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "file-explorer",
               "state": {
@@ -50,6 +86,15 @@
           {
             "id": "8f6047f99f0dca2e",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "search",
               "state": {
@@ -67,6 +112,15 @@
           {
             "id": "170a2189c1a5976f",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "bookmarks",
               "state": {},
@@ -91,10 +145,18 @@
           {
             "id": "83a3a248ead8d16c",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Designing Drasil's Chunks 2025 Status.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,26 +166,43 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Designing Drasil's Chunks 2025 Status"
+              "title": "Backlinks"
             }
           },
           {
             "id": "0b04de8f77f2c6f4",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Designing Drasil's Chunks 2025 Status.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Designing Drasil's Chunks 2025 Status"
+              "title": "Outgoing links"
             }
           },
           {
             "id": "bd5f08c052aa4554",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "tag",
               "state": {
@@ -139,24 +218,109 @@
           {
             "id": "2daeb05bb0648c77",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "outline",
               "state": {
-                "file": "Designing Drasil's Chunks 2025 Status.md",
+                "file": "Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Software.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Designing Drasil's Chunks 2025 Status"
+              "title": "Outline of Software"
+            }
+          },
+          {
+            "id": "8a7647bb34788d33",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "juggl_nodes",
+              "state": {},
+              "icon": "ag-node-list",
+              "title": "Juggl nodes"
+            }
+          },
+          {
+            "id": "3dfe00846e134571",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "juggl_style",
+              "state": {},
+              "icon": "ag-style",
+              "title": "Juggl style"
+            }
+          },
+          {
+            "id": "dbbd63ce7c409f2b",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "BC-matrix",
+              "state": {},
+              "icon": "BC-trail-icon",
+              "title": "Breadcrumbs Matrix"
+            }
+          },
+          {
+            "id": "bc01da6e3a914fa7",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "BC-tree",
+              "state": {},
+              "icon": "feather-corner-right-down",
+              "title": "Breadcrumbs Down"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -165,24 +329,39 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "juggl:Juggl global graph": false,
+      "breadcrumbs:Breadcrumbs Visualisation": false
     }
   },
-  "active": "678a3d02a3c9f9f0",
+  "active": "e7b48884d125352a",
   "lastOpenFiles": [
+    "Designing Drasil's Chunks 2025/Analysis/Projectile System.md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Software.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptChunk.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/UnitalChunks/x-component of initial velocity (UnitalChunk).md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/NamedIdea.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConstrConcepts/offset (ConstrConcept).md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/offset (ConceptChunk).md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptChunks/launcher (ConceptChunk).md",
+    "Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstraintE.md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/Symbol.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConstrConcepts/launch speed (ConstrConcept).md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/UDefn.md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/UnitSymbol.md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/Spaces/Real.md",
     "Questions, Commentary, and Issues.md",
-    "Designing Drasil's Chunks 2025/SystemInformation.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrConcept.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/CIs/Software Requirements Specification (CI).md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/ConstraintReason/Physical.md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/Constraint.md",
     "Designing Drasil's Chunks 2025 Status.md",
+    "Designing Drasil's Chunks 2025/SystemInformation.md",
     "Terminology/Domain-Specific Language.md",
     "Terminology/Drasil.md",
     "Terminology/Input-Calculate-Output (ICO).md",
     "README.md.md",
     "Bibliography/PaigeOstroff2002SingleModelPrinciple.md",
-    "Bibliography/SmithAndLai2005.md",
-    "Bibliography",
-    "Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstraintE.md",
-    "Designing Drasil's Chunks 2025/Analysis/Synonyms/ConstQDef.md",
-    "Designing Drasil's Chunks 2025/Analysis/Atoms/ModelExpr.md",
-    "Terminology/Chunk.md"
+    "Bibliography"
   ]
 }
