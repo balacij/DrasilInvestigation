@@ -38,7 +38,7 @@ timeDerivEqns :: [ModelExpr]
 timeDerivEqns = D.timeDeriv ++ [express timeQD]
 ```
 
-An [[InstanceModel]] that extends a transient [[EquationalModel]] for [[flight duration (QDefinition)]]. It declares that its [[EquationalModel]] "outputs" a single variable (a transient [[QuantityDict]] extracted from [[flight duration (ConstrConcept)]]), $t_\textit{flight}$, from [[Inputs]]:
+An [[InstanceModel]] that extends a transient [[EquationalModel]] for [[flight duration (SimpleQDef)]]. It declares that its [[EquationalModel]] "outputs" a single variable (a transient [[QuantityDict]] extracted from [[flight duration (ConstrConcept)]]), $t_\textit{flight}$, from [[Inputs]]:
 * a transient [[QuantityDict]] extracted from [[launch speed (ConstrConcept)]] paired with a [[RealInterval]] constraint ($> 0$), and
 * a transient [[QuantityDict]] extracted from [[launch angle (ConstrConcept)]] paired with a [[RealInterval]] constraint ($0 < \theta < \frac{1}{\pi}$, dependant on [[pi (DefinedQuantityDict)]])).
 

@@ -1,0 +1,1 @@
+Synonym for a [[QDefinition]] [[Expr]].
