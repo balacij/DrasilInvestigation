@@ -8,5 +8,7 @@
 * "Reference" is far too overloaded in Drasil. All chunks and such related to it need to be rebuilt for various reasons -- see https://github.com/JacquesCarette/Drasil/pull/4022 .
 * [[LabelledContent]] also needs to be rebuilt -- see https://github.com/JacquesCarette/Drasil/pull/4023 (related to References)
 * [[HasFields]] is almost exclusively used for [[Citation]] but could be used more often.
+* [[DataDefinition]]s and [[QDefinition]]s are very related. We should probably understand why they aren't merged.
+* [[DataDefinition]]s: `Scope` is underused and has no clear design. We should remove it in favour of a real design.
 ## Issues
 * [[UID]]s also (ab)used for references and citations unique label creation (within both $\LaTeX{}$ and HTML).
