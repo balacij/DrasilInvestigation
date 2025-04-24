@@ -51,8 +51,6 @@ Satisfies:
 * [[RequiresChecking]]
 
 
-
-
 All scopes are currently `Global`:
 ```haskell
 -- | Smart constructor for data definitions.
