@@ -40,11 +40,13 @@
             "id": "3b4cf0659a9de01b",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 2,
               "stack": [
                 {
-                  "state": "{}",
-                  "eState": "{}"
+                  "title": "Values of Auxiliary Constants (Section (Constructor))",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/Sections/Values of Auxiliary Constants (Section (Constructor)).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Values of Auxiliary Constants (Section (Constructor))\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":16,\"ch\":125},\"to\":{\"line\":16,\"ch\":125}}}"
                 },
                 {
                   "title": "gravAccelValue (ConceptInstance)",
@@ -53,25 +55,70 @@
                   "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":324},\"to\":{\"line\":8,\"ch\":324}}}"
                 },
                 {
-                  "title": "Designing Drasil's Chunks 2025 Status",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025 Status.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Designing Drasil's Chunks 2025 Status\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":17,\"ch\":0},\"to\":{\"line\":17,\"ch\":0}},\"scroll\":0}"
+                  "state": "{}",
+                  "eState": "{}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections/Values of Auxiliary Constants (Section (Constructor)).md",
+                "file": "Designing Drasil's Chunks 2025 Status.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Values of Auxiliary Constants (Section (Constructor))"
+              "title": "Designing Drasil's Chunks 2025 Status"
+            }
+          },
+          {
+            "id": "c2e3f0109d5d0860",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EquationalModel.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "EquationalModel"
+            }
+          },
+          {
+            "id": "e3754e77238acf0a",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ModelKinds.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ModelKinds"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -340,34 +387,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "84f9a5a4f8041f22",
+  "active": "e3754e77238acf0a",
   "lastOpenFiles": [
+    "ModelKinds.md",
+    "EquationalModel.md",
+    "Designing Drasil's Chunks 2025 Status.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Calculation of landing time (InstanceModel).md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/gravAccelValue (ConceptInstance).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections/Values of Auxiliary Constants (Section (Constructor)).md",
+    "Questions, Commentary, and Issues.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections",
     "Section.md",
     "SecCons.md",
     "Title.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/gravAccelValue (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025 Status.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Output message (InstanceModel).md",
     "Designing Drasil's Chunks 2025/Analysis/Atoms/Inputs.md",
     "Theories.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/DataDefinition.md",
-    "Questions, Commentary, and Issues.md",
     "Designing Drasil's Chunks 2025/Analysis/Synonyms/TypingContext.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Typed.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/RequiresChecking.md",
     "Designing Drasil's Chunks 2025/Analysis/Atoms/Derivation.md",
     "Designing Drasil's Chunks 2025/Analysis/ChunkDB.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/MayHaveDerivation.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Calculation of landing time (InstanceModel).md",
     "Terminology/bibtex.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/Citation.md",
     "Designing Drasil's Chunks 2025/Analysis/Synonyms/TypeError.md",
     "Designing Drasil's Chunks 2025/Projectile.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasAdditionalNotes.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasDecRef.md",
-    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasOutput.md",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0146.jpeg",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd",
     "Designing Drasil's Chunks 2025/Meetings",

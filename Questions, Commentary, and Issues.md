@@ -18,4 +18,4 @@
 * [[RequiresChecking]]: Generalize!!!!
 ## Issues
 * [[UID]]s also (ab)used for references and citations unique label creation (within both $\LaTeX{}$ and HTML).
-* [[Values of Auxiliary Constants (Section (Constructor))]]: See the file first. The issue with this [[Section]] constructor is that it's abused to "get" the `UID` of the (not yet created) [[Section]]. This particular constructor is abused as part of a hack because our assumptions don't carry constants themselves. Rather, they are
+* [[Values of Auxiliary Constants (Section (Constructor))]]: See the file first. The issue with this [[Section]] constructor is that it's abused to "get" the `UID` of the (not yet created) [[Section]]. The abuse is for a hack that uses our assumptions to refer to values in the "values of auxiliary constants" section. The real problem is that we're conflating mathematical knowledge (of the constant definition) with display knowledge (displaying the constant definition). We need to be able to move the constant into the assumption and add code that defers writing the assumption's constant into the assumptions table.
