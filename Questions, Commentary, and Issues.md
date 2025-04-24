@@ -8,6 +8,7 @@
 * "Reference" is far too overloaded in Drasil. All chunks and such related to it need to be rebuilt for various reasons -- see https://github.com/JacquesCarette/Drasil/pull/4022 .
 * [[LabelledContent]] also needs to be rebuilt -- see https://github.com/JacquesCarette/Drasil/pull/4023 (related to References)
 * [[HasFields]] is almost exclusively used for [[Citation]] but could be used more often.
+* [[HasDecRef]] is used exclusively for DDs, TMs, GDs, and IMs but could be used more often.
 * [[DataDefinition]]s and [[QDefinition]]s are very related. We should probably understand why they aren't merged.
 * [[DataDefinition]]s: `Scope` is underused and has no clear design. We should remove it in favour of a real design. Currently everything is just `Global` scoped. See bottom of [[DataDefinition]].
 * [[RefInfo]] and [[Symbol]] are interested in that they are used to direct attention towards a specific component of another thing. For [[RefInfo]], towards a page/figure/equation/definition/etc. from a [[Reference]]. For a [[Symbol]], e.g. $p_y$, towards the $y$-component of $p$. Currently, both kinds of referrants are manually created, but there might be a real place to design something here. For the (math) symbols, too, there would be a computational interpretation that could be created here. This is also similar to when we want to actually pull in an image from a reference, such as in the case of [[LabelledContent]], for displaying in the SRS, or just keeping as a local file. This is related to how we use `Lens`es to grab information from specific chunks, except rather than "getting" information, we just want to be able to "say that the Drasil runtime should grab it" (again, similar to when we implicitly defer `phrase`/`term`-grabbing in [[Sentence]]).
@@ -17,3 +18,4 @@
 * [[RequiresChecking]]: Generalize!!!!
 ## Issues
 * [[UID]]s also (ab)used for references and citations unique label creation (within both $\LaTeX{}$ and HTML).
+* [[Values of Auxiliary Constants (Section (Constructor))]]: See the file first. The issue with this [[Section]] constructor is that it's abused to "get" the `UID` of the (not yet created) [[Section]]. This particular constructor is abused as part of a hack because our assumptions don't carry constants themselves. Rather, they are

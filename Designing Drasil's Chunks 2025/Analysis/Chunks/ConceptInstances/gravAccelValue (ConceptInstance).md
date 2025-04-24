@@ -1,14 +1,12 @@
 ---
-assumesExistenceOfHack: "[[Values of Auxiliary Constants (Section)]]"
+assumesExistenceOfHack: "[[Values of Auxiliary Constants (Section (Constructor))]]"
 ---
 
 ```haskell
 gravAccelValue = cic "gravAccelValue" gravAccelValueDesc "gravAccelValue" assumpDom
 ```
 
-A [[ConceptInstance]] that explains that "the [[acceleration (ConceptChunk)]] due to [[gravity (ConceptChunk)]] is assumed to have the [[value (IdeaDict)]] provided in the section for [[Values of Auxiliary Constants (IdeaDict)]]" (where it references the IdeaDict and contains a transient copy of the [[Values of Auxiliary Constants (Section)]] chunk).
-
-
+A [[ConceptInstance]] that explains that "the [[acceleration (ConceptChunk)]] due to [[gravity (ConceptChunk)]] is assumed to have the [[value (IdeaDict)]] provided in the section for [[Values of Auxiliary Constants (IdeaDict)]]" (where it references the IdeaDict and contains a transient copy of the [[Values of Auxiliary Constants (Section (Constructor))]] chunk).
 
 ```haskell
 gravAccelValueDesc :: Sentence

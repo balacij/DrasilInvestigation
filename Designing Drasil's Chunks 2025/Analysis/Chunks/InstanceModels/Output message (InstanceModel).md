@@ -1,5 +1,5 @@
 ---
-assumesExistenceOfHack: "[[Values of Auxiliary Constants (Section)]]"
+assumesExistenceOfHack: "[[Values of Auxiliary Constants (Section (Constructor))]]"
 ---
 ```haskell
 messageIM :: InstanceModel
@@ -17,7 +17,7 @@ Explaining that the IM outputs [[message (QuantityDict)]]. It also contains 4 no
 * [[offset (ConstrConcept)]] is from [[Offset (InstanceModel)]].
 * The [[constraint (ConceptChunk)]] ... is from the fact that ... (from [[posXDirection (ConceptInstance)]]).
 * The [[constraint (ConceptChunk)]] ... is from the fact that ... (expression containing [[flight duration (ConstrConcept)]]) is from [[timeStartZero (ConceptInstance)]].
-* [[tolerance (ConstQDef)]] is defined in [[Values of Auxiliary Constants (Section)]].
+* [[tolerance (ConstQDef)]] is defined in [[Values of Auxiliary Constants (Section (Constructor))]].
 
 ```haskell
 
