@@ -7,10 +7,11 @@ LIST FROM #todo AND "Designing Drasil's Chunks 2025"
 ```
 
 ```dataview
-TABLE WITHOUT ID ol AS "Missing reference", join(rows.file.link, ", ") AS "Referees"
+TABLE WITHOUT ID string(ol) AS "Missing reference", join(rows.file.link, ", ") AS "Referees"
 FLATTEN file.outlinks AS ol
-WHERE !ol.file AND contains(file.path, "Designing Drasil's Chunks 2025")
+WHERE contains(file.path, "Designing Drasil's Chunks 2025")
+  AND !ol.file
+  AND regexmatch(".+\.(png|jpe?g|gif|bmp|svg|webp).+", lower(string(ol))) = false
 GROUP BY ol
-FLATTEN ol
 SORT ol ASC
 ```

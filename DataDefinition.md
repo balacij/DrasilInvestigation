@@ -27,7 +27,29 @@ data DataDefinition where
 
 A `DataDefinition` is essentially an extension of [[QDefinition]] with some extra data and a unique [[UID]]:
 * A "ScopeType" (Local/Global, but only Global is used) and a "Scope" (unused).
-* 
+* A list of [[DecRef]]s (i.e., [[Reference]]s decorated with [[RefInfo]]) used for the [[Source]].
+* Maybe a [[Derivation]].
+* A [[ShortName]].
+* A String for its [[HasRefAddress]] instance's label.
+* Additional notes, via a list of [[Sentence]]s.
+
+Satisfies:
+* [[HasUID]]
+* [[NamedIdea]]
+* [[Idea]]
+* [[DefinesQuantity]]
+* [[HasOutput]]
+* [[Express]]
+* [[HasDecRef]]
+* [[MayHaveDerivation]]
+* [[HasAdditionalNotes]]
+* [[HasShortName]]
+* [[HasRefAddress]]
+* [[ConceptDomain]]
+* [[CommonIdea]]
+* [[Referable]]
+* [[RequiresChecking]]
+
 
 
 
