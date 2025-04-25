@@ -72,7 +72,7 @@
             }
           },
           {
-            "id": "c2e3f0109d5d0860",
+            "id": "f53685cfc2423bc8",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -84,41 +84,14 @@
               ]
             },
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "EquationalModel.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "EquationalModel"
-            }
-          },
-          {
-            "id": "e3754e77238acf0a",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ModelKind(s).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ModelKind(s)"
+              "title": "New tab"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -387,15 +360,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e3754e77238acf0a",
+  "active": "f53685cfc2423bc8",
   "lastOpenFiles": [
-    "EquationalModel.md",
     "Designing Drasil's Chunks 2025 Status.md",
+    "Questions, Commentary, and Issues.md",
+    "EquationalModel.md",
     "ModelKind(s).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Calculation of landing time (InstanceModel).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/gravAccelValue (ConceptInstance).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections/Values of Auxiliary Constants (Section (Constructor)).md",
-    "Questions, Commentary, and Issues.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections",
     "Section.md",
     "SecCons.md",
