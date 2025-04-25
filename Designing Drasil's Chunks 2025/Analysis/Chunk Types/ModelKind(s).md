@@ -28,9 +28,12 @@ data ModelKind e = MK {
 }
 ```
 
-The real chunk here is `ModelKind`. A `ModelKind` contains the substantial thing that is developed in a theory (and displayed in the theory's output, i.e., TMs, GDs, and IMs, DDs too, but those are exclusively [[QDefinition]]s).
+The real chunk here is `ModelKind`. A `ModelKind` contains the substantial thing that is developed in a theory (and displayed in the theory's output, i.e., TMs, GDs, and IMs, DDs too).
 
-The most common theory kind is the [[EquationalModel]], which means that a theory exposes a formula for a quantity. Since [[Projectile]] exclusively uses [[EquationalModel]], I won't write about the other ones here.
+The most common theory kind is the [[EquationalModel]], which means that a theory exposes a formula for a quantity. Since [[Projectile]] exclusively uses [[EquationalModel]], I won't write about the other ones.
+
+Note:
+* There is a type hole in the `ModelKind(s)` that is normally filled in with `Expr` or `ModelExpr` which indicates whether the theory is readily usable for code generation or not (i.e., has a computational interpretation).
 
 Satisfies:
 * [[HasUID]]
