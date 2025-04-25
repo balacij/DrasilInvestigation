@@ -10,7 +10,7 @@
           {
             "id": "25e86b2c12df3d6a",
             "type": "tabs",
-            "dimension": 67.56972111553785,
+            "dimension": 69.40239043824701,
             "children": [
               {
                 "id": "c209c9f5a094c5cb",
@@ -80,37 +80,14 @@
                   "icon": "lucide-file",
                   "title": "InstanceModel"
                 }
-              },
-              {
-                "id": "1911ad9ed8914990",
-                "type": "leaf",
-                "pane-relief:history-v1": {
-                  "pos": 0,
-                  "stack": [
-                    {
-                      "state": "{}",
-                      "eState": "{}"
-                    }
-                  ]
-                },
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "OutputConstraints.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "OutputConstraints"
-                }
               }
             ],
-            "currentTab": 3
+            "currentTab": 2
           },
           {
             "id": "f16f96891fdb0b5d",
             "type": "tabs",
-            "dimension": 32.43027888446215,
+            "dimension": 30.597609561752986,
             "children": [
               {
                 "id": "80f81429fad7180f",
@@ -406,11 +383,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1911ad9ed8914990",
+  "active": "80f81429fad7180f",
   "lastOpenFiles": [
-    "Questions, Commentary, and Issues.md",
-    "OutputConstraints.md",
     "InstanceModel.md",
+    "Questions, Commentary, and Issues.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasOutput.md",
+    "HasInputs.md",
+    "OutputConstraints.md",
     "Output.md",
     "Designing Drasil's Chunks 2025 Status.md",
     "TheoryModel.md",
@@ -434,8 +413,6 @@
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Typed.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/RequiresChecking.md",
     "Designing Drasil's Chunks 2025/Analysis/Atoms/Derivation.md",
-    "Designing Drasil's Chunks 2025/Analysis/ChunkDB.md",
-    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/MayHaveDerivation.md",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd",
     "Designing Drasil's Chunks 2025/Meetings",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0148.jpeg",

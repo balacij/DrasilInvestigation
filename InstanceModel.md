@@ -19,3 +19,27 @@ An `InstanceModel` is our one theory type that is used for code generation. All 
 An `InstanceModel` is an extension of a [[ModelKind(s)]] [[Expr]] with:
 * Designated [[Inputs]]
 * A _single_ designated [[Output]] along with a list of [[OutputConstraints]].
+* A list of [[DecRef]]s (for the source field).
+* Maybe a [[Derivation]].
+* A [[ShortName]] (the label).
+* A reference address (a String), same content as the [[ShortName]] w/ "IM:" prepended.
+* A list of notes ([[Sentence]]s).
+
+Satisfies:
+* [[HasUID]]
+* [[NamedIdea]]
+* [[Idea]]
+* [[Definition]]
+* [[ConceptDomain]]
+* [[Express]]
+* [[MayHaveDerivation]]
+* [[HasDecRef]]
+* [[HasShortName]]
+* [[HasRefAddress]]
+* [[HasAdditionalNotes]]
+* [[CommonIdea]]
+* [[Referable]]
+* [[DefinesQuantity]]
+* [[HasInputs]]
+* [[HasOutput]]
+* [[RequiresChecking]]
