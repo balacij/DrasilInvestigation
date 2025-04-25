@@ -14,7 +14,7 @@ Viewing theory graph:
 * End-user: See a single "base theory" that is a flattened/resolved version of the library writer's work.
 
 
-Blackbox theories: you dont know what the contents are, you only know that it's related to one of your theories
+Blackbox theories: you don't know what the contents are, you only know that it's related to one of your theories
 
 ![[IMG_0146.jpeg]]
 
