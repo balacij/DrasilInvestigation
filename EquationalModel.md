@@ -7,4 +7,4 @@ data ModelKinds e where
   ...
 ```
 
-An [[EquationalModel]] is a _kind_ of [[ModelKinds]].
+An [[EquationalModel]] is a variant of [[ModelKind(s)]] that wraps a [[QDefinition]].

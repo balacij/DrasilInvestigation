@@ -18,4 +18,23 @@ data ModelKinds e where
   EquationalRealm       :: MultiDefn e       -> ModelKinds e
   -- TODO: Remove OthModel after having removed all instances of it.
   OthModel              :: RelationConcept   -> ModelKinds e
+
+-- | 'ModelKinds' carrier, used to carry commonly overwritten information from
+-- the IMs/TMs/GDs.
+data ModelKind e = MK {
+  _mk     :: ModelKinds e,
+  _mkUID  :: UID,
+  _mkTerm :: NP
+}
 ```
+
+The real chunk here is `ModelKind`.
+
+Satisfies:
+* [[HasUID]]
+* [[NamedIdea]]
+* [[Idea]]
+* [[Definition]]
+* [[ConceptDomain]]
+* [[Express]]
+* [[RequiresChecking]]
