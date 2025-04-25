@@ -71,7 +71,8 @@
               "title": "Designing Drasil's Chunks 2025 Status"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -340,10 +341,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "84f9a5a4f8041f22",
+  "active": "3b4cf0659a9de01b",
   "lastOpenFiles": [
-    "Designing Drasil's Chunks 2025 Status.md",
     "Questions, Commentary, and Issues.md",
+    "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0146.jpeg",
+    "Designing Drasil's Chunks 2025 Status.md",
     "EquationalModel.md",
     "ModelKind(s).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Calculation of landing time (InstanceModel).md",
@@ -368,8 +370,6 @@
     "Designing Drasil's Chunks 2025/Analysis/Synonyms/TypeError.md",
     "Designing Drasil's Chunks 2025/Projectile.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasAdditionalNotes.md",
-    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasDecRef.md",
-    "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0146.jpeg",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd",
     "Designing Drasil's Chunks 2025/Meetings",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0148.jpeg",
