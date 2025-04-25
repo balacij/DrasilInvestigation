@@ -19,4 +19,21 @@ A `GeneralDefinition` extends a [[ModelKind(s)]] with:
 * A list of [[DecRef]]s (Decorated references) -- For the "Source" field of the theory display box.
 * A [[ShortName]] -- the "code name identity" (e.g., "GD:$X", $X is the ShortName provided).
 * A reference address for the SRS (note: the same for the LaTeX and HTML!) -- the same as the [[ShortName]] except with the "GD:" prepended.
-* 
+* A list of notes (via [[Sentence]]) that are directly displayed in the presentation box.
+
+Satisfies:
+* [[HasUID]]
+* [[NamedIdea]]
+* [[Idea]]
+* [[Definition]]
+* [[ConceptDomain]]
+* [[Express]]
+* [[Express]]
+* [[MayHaveDerivation]]
+* [[HasDecRef]]
+* [[HasShortName]]
+* [[HasRefAddress]]
+* [[HasAdditionalNotes]]
+* [[MayHaveUnit]]
+* [[CommonIdea]]
+* [[Referable]]
