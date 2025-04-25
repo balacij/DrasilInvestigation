@@ -70,28 +70,8 @@
               "icon": "lucide-file",
               "title": "Designing Drasil's Chunks 2025 Status"
             }
-          },
-          {
-            "id": "f53685cfc2423bc8",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -360,7 +340,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f53685cfc2423bc8",
+  "active": "84f9a5a4f8041f22",
   "lastOpenFiles": [
     "Designing Drasil's Chunks 2025 Status.md",
     "Questions, Commentary, and Issues.md",

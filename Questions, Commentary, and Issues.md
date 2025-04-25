@@ -15,7 +15,8 @@
  * [[HasOutput]], [[QDefinition]], [[DataDefinition]], [[ConstrConcept]], and [[ConstrainedChunk]]. All kinds of constraints!
 * [[MayHaveDerivation]] has a discussion around it we can have related to specialization, extension, etc.
 * [[HasAdditionalNotes]]: We currently only use it for DDs, TMs, GDs, and IMs. Perhaps we should investigate what's in the "additional notes" and re-evaluate why they're there? This seems like something that shouldn't exist, or should perhaps be renamed to something like "HasHumanOnlyNotes" or "HasMetaNotes" or ...
-* [[RequiresChecking]]: Generalize!!!!
+* [[RequiresChecking]]: Generalize!! All things can have "things that need checking!"
+* [[HasUID]]: Instances of [[HasUID]] is our most likely indicator of "is a chunk" and, in general, when we define one, we also define an instance for `Eq` based on it. I'm fairly certain we can write a general
 ## Issues
 * [[UID]]s also (ab)used for references and citations unique label creation (within both $\LaTeX{}$ and HTML).
 * [[Values of Auxiliary Constants (Section (Constructor))]]: See the file first. The issue with this [[Section]] constructor is that it's abused to "get" the `UID` of the (not yet created) [[Section]]. The abuse is for a hack that uses our assumptions to refer to values in the "values of auxiliary constants" section. The real problem is that we're conflating mathematical knowledge (of the constant definition) with display knowledge (displaying the constant definition). We need to be able to move the constant into the assumption and add code that defers writing the assumption's constant into the assumptions table.
