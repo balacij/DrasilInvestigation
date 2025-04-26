@@ -81,8 +81,7 @@
                   "title": "TheoryModel"
                 }
               }
-            ],
-            "currentTab": 2
+            ]
           },
           {
             "id": "f16f96891fdb0b5d",
@@ -383,12 +382,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a5352d657d703d23",
+  "active": "c209c9f5a094c5cb",
   "lastOpenFiles": [
-    "Designing Drasil's Chunks 2025 Status.md",
     "TheoryModel.md",
     "InstanceModel.md",
     "Questions, Commentary, and Issues.md",
+    "Designing Drasil's Chunks 2025 Status.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasOutput.md",
     "HasInputs.md",
     "OutputConstraints.md",

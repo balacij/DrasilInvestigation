@@ -32,3 +32,5 @@ data TheoryModel = TM
   , _notes :: [Sentence]
   }
 ```
+
+A `TheoryModel` is our "top level theory type." These theories are the ones that are to be most generic, commonly from "libraries of theories" or directly from textbook knowledge.
