@@ -91,7 +91,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TheoryModel.md",
+                "file": "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
                 "mode": "source",
                 "source": false
               },
@@ -114,16 +114,37 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Designing Drasil's Chunks 2025/Analysis/TODO Theory.md",
+                "file": "TODO Theory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "TODO Theory"
             }
+          },
+          {
+            "id": "ac3c218ee27e862f",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "pinned": true,
+            "state": {
+              "type": "juggl_view",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Juggl"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -306,13 +327,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Questions, Commentary, and Issues.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Questions, Commentary, and Issues"
+              "title": "Outline"
             }
           },
           {
@@ -373,7 +393,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -391,23 +411,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "80f81429fad7180f",
+  "active": "ac3c218ee27e862f",
   "lastOpenFiles": [
+    "TODO Theory.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasInputs.md",
+    "Designing Drasil's Chunks 2025/Analysis/Atoms/SpaceDefn.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Theory.md",
+    "Designing Drasil's Chunks 2025/Analysis/Synonyms/OutputConstraints.md",
+    "Designing Drasil's Chunks 2025/Analysis/Synonyms/Output.md",
+    "Questions, Commentary, and Issues.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/InstanceModel.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Output message (InstanceModel).md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
     "Designing Drasil's Chunks 2025 Status.md",
-    "TheoryModel.md",
-    "Theory.md",
-    "SpaceDefn.md",
-    "Designing Drasil's Chunks 2025/Analysis/TODO Theory.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/DataDefinition.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasAdditionalNotes.md",
-    "Questions, Commentary, and Issues.md",
     "Designing Drasil's Chunks 2025/Meetings/Designing Apr 22nd.md",
-    "InstanceModel.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasOutput.md",
-    "HasInputs.md",
-    "OutputConstraints.md",
-    "Output.md",
-    "GeneralDefinition.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/GeneralDefinition.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ModelKind(s).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/EquationalModel.md",
     "Designing Drasil's Chunks 2025/Analysis/Synonyms/Title.md",
@@ -418,9 +440,7 @@
     "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/gravAccelValue (ConceptInstance).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections/Values of Auxiliary Constants (Section (Constructor)).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Output message (InstanceModel).md",
     "Designing Drasil's Chunks 2025/Analysis/Atoms/Inputs.md",
-    "Theories.md",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd",
     "Designing Drasil's Chunks 2025/Meetings",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0148.jpeg",
