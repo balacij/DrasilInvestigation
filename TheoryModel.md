@@ -36,7 +36,13 @@ data TheoryModel = TM
 A `TheoryModel` is our "top level theory type." These theories are the ones that are to be most generic, imported from "libraries of theories" and based on things directly from "textbook knowledge."
 
 A `TheoryModel` is an extension of a [[ModelKind(s)]] [[ModelExpr]] (i.e., a theory that is not intended for code generation) with:
-* ...
+* A list of [[TheoryModel]]s, called the "context" (unimplemented; ALWAYS EMPTY!).
+* A list of [[SpaceDefn]]s (unimplemented; ALWAYS EMPTY!).
+* A list of all relevant [[QuantityDict]]s -- which looks like we should be able to automatically extract from the related [[ModelKind(s)]] outputted axiomatic expressions.
+* A list of all defined operations (as [[ConceptChunk]]s; ALWAYS EMPTY!).
+* A list of all related [[ModelQDef]]s defining *non-functions* (which are MANUALLY extract from the equational models and empty otherwise).
+* A list of invariants expressed as [[ModelExpr]]s, which are MANUALLY extracted from the equational constraints models and empty otherwise.
+* A list of all related [[ModelQDef]]s defining *functions* (which are MANUALLY extract from the equational models and empty otherwise).
 * A list of [[DecRef]]s (i.e., [[Reference]]s decorated with [[RefInfo]]) used for the "Source" field.
 * Interestingly, no derivation!
 * A [[ShortName]].

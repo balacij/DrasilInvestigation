@@ -22,7 +22,7 @@
 * TODO: Mine the notes shown in [[GeneralDefinition]]s and other theories. What do we write about? Why?
 * [[Referable]]: A divergence from our normal design of chunks. This typeclass is a renderer for Chunks to [[LblType]]s (specifically, decorated internal document references). Normally, we write extractors that do this for us. For example, for Expr -> CodeExpr, or Sentence -> Doc.
 * [[RealInterval]]: Use only one type parameter. There's no point in having two that aren't the same.
-* 
+* [[TheoryModel]]: Plenty of things are unused. Needs to be restructured to be more like the other kinds of theires and then we need to figure out how we're going to build the theories with a real design.
 ## Issues
 * [[UID]]s also (ab)used for references and citations unique label creation (within both $\LaTeX{}$ and HTML).
 * [[Values of Auxiliary Constants (Section (Constructor))]]: See the file first. The issue with this [[Section]] constructor is that it's abused to "get" the `UID` of the (not yet created) [[Section]]. The abuse is for a hack that uses our assumptions to refer to values in the "values of auxiliary constants" section. The real problem is that we're conflating mathematical knowledge (of the constant definition) with display knowledge (displaying the constant definition). We need to be able to move the constant into the assumption and add code that defers writing the assumption's constant into the assumptions table.
