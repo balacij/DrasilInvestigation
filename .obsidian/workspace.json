@@ -34,8 +34,14 @@
             "id": "80f81429fad7180f",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 1,
               "stack": [
+                {
+                  "title": "DefinesQuantity",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefinesQuantity.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"DefinesQuantity\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
                 {
                   "state": "{}",
                   "eState": "{}"
@@ -51,6 +57,29 @@
               },
               "icon": "lucide-file",
               "title": "Questions, Commentary, and Issues"
+            }
+          },
+          {
+            "id": "ad9dad1e4fc792ed",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DefiningExpr"
             }
           },
           {
@@ -123,7 +152,30 @@
             }
           },
           {
-            "id": "ac3c218ee27e862f",
+            "id": "4f979d07f8df5892",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TheoryModel"
+            }
+          },
+          {
+            "id": "9b253dc519b1328b",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -144,7 +196,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -228,7 +280,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 346.5
+    "width": 346.5,
+    "collapsed": true
   },
   "right": {
     "id": "9e0e22f1f4d27c44",
@@ -327,12 +380,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Questions, Commentary, and Issues.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Questions, Commentary, and Issues"
             }
           },
           {
@@ -397,7 +451,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -411,23 +466,27 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ac3c218ee27e862f",
+  "active": "80f81429fad7180f",
   "lastOpenFiles": [
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefinesQuantity.md",
+    "Questions, Commentary, and Issues.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Definition.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptChunk.md",
+    "Designing Drasil's Chunks 2025 Status.md",
+    "Designing Drasil's Chunks 2025/Meetings/Designing Apr 22nd.md",
     "TODO Theory.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/QuantityDict.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasInputs.md",
     "Designing Drasil's Chunks 2025/Analysis/Atoms/SpaceDefn.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Theory.md",
     "Designing Drasil's Chunks 2025/Analysis/Synonyms/OutputConstraints.md",
     "Designing Drasil's Chunks 2025/Analysis/Synonyms/Output.md",
-    "Questions, Commentary, and Issues.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/InstanceModel.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Output message (InstanceModel).md",
-    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
-    "Designing Drasil's Chunks 2025 Status.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/DataDefinition.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasAdditionalNotes.md",
-    "Designing Drasil's Chunks 2025/Meetings/Designing Apr 22nd.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasOutput.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/GeneralDefinition.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ModelKind(s).md",
@@ -436,11 +495,7 @@
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/Section.md",
     "Designing Drasil's Chunks 2025/Analysis/Atoms/SecCons.md",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0146.jpeg",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Calculation of landing time (InstanceModel).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/gravAccelValue (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections/Values of Auxiliary Constants (Section (Constructor)).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections",
-    "Designing Drasil's Chunks 2025/Analysis/Atoms/Inputs.md",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd",
     "Designing Drasil's Chunks 2025/Meetings",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0148.jpeg",

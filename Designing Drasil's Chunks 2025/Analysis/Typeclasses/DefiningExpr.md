@@ -1,5 +1,5 @@
 ```haskell
-class DefiningExpr c where
+class DefiningExpr c e where
   -- | Provides a 'Lens' to the expression.
   --   TODO: Well, technically, `e` doesn't need to be an "expression" of any sorts.
   --         It just needs to be _something_, and it would have approximately have same meaning.
