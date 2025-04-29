@@ -175,7 +175,7 @@
             }
           },
           {
-            "id": "9b253dc519b1328b",
+            "id": "7d57aeb6219132b2",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -186,17 +186,15 @@
                 }
               ]
             },
-            "pinned": true,
             "state": {
-              "type": "juggl_view",
+              "type": "empty",
               "state": {},
-              "pinned": true,
               "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "title": "New tab"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -466,18 +464,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "80f81429fad7180f",
+  "active": "7d57aeb6219132b2",
   "lastOpenFiles": [
-    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/MayHaveDerivation.md",
+    "Designing Drasil's Chunks 2025 Status.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
+    "TODO Theory.md",
+    "Designing Drasil's Chunks 2025/Meetings/Designing Apr 22nd.md",
     "Questions, Commentary, and Issues.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/MayHaveDerivation.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefinesQuantity.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Definition.md",
-    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptChunk.md",
-    "Designing Drasil's Chunks 2025 Status.md",
-    "Designing Drasil's Chunks 2025/Meetings/Designing Apr 22nd.md",
-    "TODO Theory.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/QuantityDict.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasInputs.md",
     "Designing Drasil's Chunks 2025/Analysis/Atoms/SpaceDefn.md",
