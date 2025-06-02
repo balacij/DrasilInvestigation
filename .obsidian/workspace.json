@@ -6,7 +6,31 @@
       {
         "id": "25e86b2c12df3d6a",
         "type": "tabs",
+        "dimension": 53.97862232779097,
         "children": [
+          {
+            "id": "0d51142c7adedf53",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Designing Drasil's Chunks 2025 Status.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Designing Drasil's Chunks 2025 Status"
+            }
+          },
           {
             "id": "c209c9f5a094c5cb",
             "type": "leaf",
@@ -37,170 +61,6 @@
             }
           },
           {
-            "id": "80f81429fad7180f",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "twoDMotion (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/twoDMotion (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"twoDMotion (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "timeStartZero (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/timeStartZero (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"timeStartZero (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "targetXAxis (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/targetXAxis (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"targetXAxis (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "neglectDrag (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/neglectDrag (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"neglectDrag (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "neglectCurve (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/neglectCurve (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"neglectCurve (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "gravAccelValue (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/gravAccelValue (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"gravAccelValue (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
-                },
-                {
-                  "title": "freeFlight (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/freeFlight (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"freeFlight (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "cartSys (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/cartSys (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"cartSys (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "accelYGravity (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/accelYGravity (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"accelYGravity (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "accelXZero (ConceptInstance)",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/accelXZero (ConceptInstance).md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"accelXZero (ConceptInstance)\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":168},\"to\":{\"line\":7,\"ch\":168}}}"
-                },
-                {
-                  "title": "ConceptInstance",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptInstance.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"ConceptInstance\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "Questions, Commentary, and Issues",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Questions, Commentary, and Issues.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Questions, Commentary, and Issues\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":314},\"to\":{\"line\":4,\"ch\":314}},\"scroll\":7.469439193446755}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/yAxisGravity (ConceptInstance).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "yAxisGravity (ConceptInstance)"
-            }
-          },
-          {
-            "id": "ad9dad1e4fc792ed",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "DefiningExpr"
-            }
-          },
-          {
-            "id": "0d51142c7adedf53",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Designing Drasil's Chunks 2025 Status.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Designing Drasil's Chunks 2025 Status"
-            }
-          },
-          {
-            "id": "a5352d657d703d23",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "TheoryModel"
-            }
-          },
-          {
             "id": "f9befe8399e2239b",
             "type": "leaf",
             "pane-relief:history-v1": {
@@ -221,29 +81,6 @@
               },
               "icon": "lucide-file",
               "title": "TODO Theory"
-            }
-          },
-          {
-            "id": "4f979d07f8df5892",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "TheoryModel"
             }
           },
           {
@@ -276,89 +113,6 @@
             }
           },
           {
-            "id": "8923c16381c30e35",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "ConceptInstance",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptInstance.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"ConceptInstance\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "TheoryModel",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"TheoryModel\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":35,\"ch\":0},\"to\":{\"line\":35,\"ch\":198}},\"scroll\":23.19047619047619}"
-                },
-                {
-                  "title": "DefinedQuantityDict",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/DefinedQuantityDict.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"DefinedQuantityDict\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":16,\"ch\":0},\"to\":{\"line\":16,\"ch\":0}}}"
-                },
-                {
-                  "title": "QDefinition",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/QDefinition.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"QDefinition\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":223}}}"
-                },
-                {
-                  "title": "ConceptInstance",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptInstance.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"ConceptInstance\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":11,\"ch\":0},\"to\":{\"line\":11,\"ch\":109}}}"
-                },
-                {
-                  "title": "ConceptChunk",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptChunk.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"ConceptChunk\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":11,\"ch\":33},\"to\":{\"line\":11,\"ch\":225}}}"
-                },
-                {
-                  "title": "CI",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/CI.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"CI\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "IdeaDict",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/IdeaDict.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"IdeaDict\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "QuantityDict",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/QuantityDict.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"QuantityDict\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":28},\"to\":{\"line\":10,\"ch\":28}}}"
-                },
-                {
-                  "title": "NamedIdea",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Typeclasses/NamedIdea.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"NamedIdea\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/accelXZero (ConceptInstance).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "accelXZero (ConceptInstance)"
-            }
-          },
-          {
             "id": "b2ada656da6b04fe",
             "type": "leaf",
             "pane-relief:history-v1": {
@@ -367,22 +121,118 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "Questions, Commentary, and Issues",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Questions, Commentary, and Issues.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Questions, Commentary, and Issues\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":49},\"to\":{\"line\":2,\"ch\":49}},\"scroll\":0}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Questions, Commentary, and Issues.md",
+                "file": "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefinesQuantity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Questions, Commentary, and Issues"
+              "title": "DefinesQuantity"
             }
           },
           {
-            "id": "225349029918d6da",
+            "id": "c08cdd3ca1585460",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Quantity",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Typeclasses/Quantity.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Quantity\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "QuantityDict",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/QuantityDict.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"QuantityDict\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":26,\"ch\":7},\"to\":{\"line\":26,\"ch\":7}}}"
+                },
+                {
+                  "title": "NamedIdea",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Typeclasses/NamedIdea.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"NamedIdea\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Idea",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Typeclasses/Idea.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Idea\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":29},\"to\":{\"line\":9,\"ch\":29}},\"scroll\":0}"
+                },
+                {
+                  "title": "IdeaDict",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/IdeaDict.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"IdeaDict\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrainedChunk.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ConstrainedChunk"
+            }
+          },
+          {
+            "id": "5c318bf71f145345",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 1,
+              "stack": [
+                {
+                  "title": "DataDefinition",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Designing Drasil's Chunks 2025/Analysis/Chunk Types/DataDefinition.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"DataDefinition\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Designing Drasil's Chunks 2025/Analysis/Typeclasses/CommonIdea.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CommonIdea"
+            }
+          }
+        ],
+        "currentTab": 4
+      },
+      {
+        "id": "705722a274551e6b",
+        "type": "tabs",
+        "dimension": 46.02137767220903,
+        "children": [
+          {
+            "id": "7723f8b0a91914b1",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -399,11 +249,10 @@
               "state": {},
               "pinned": true,
               "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "title": "Juggl"
             }
           }
-        ],
-        "currentTab": 9
+        ]
       }
     ],
     "direction": "vertical"
@@ -487,7 +336,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 346.5
+    "width": 346.5,
+    "collapsed": true
   },
   "right": {
     "id": "9e0e22f1f4d27c44",
@@ -674,32 +524,32 @@
   },
   "active": "b2ada656da6b04fe",
   "lastOpenFiles": [
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/accelXZero (ConceptInstance).md",
     "Questions, Commentary, and Issues.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptInstance.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/DefinedQuantityDict.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/QDefinition.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptChunk.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/CI.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Definition.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/DefiningExpr.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/IdeaDict.md",
+    "TODO Theory.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/ConceptDomain.md",
+    "Designing Drasil's Chunks 2025 Status.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/CommonIdea.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrainedChunk.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Quantity.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrConcept.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/QuantityDict.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/NamedIdea.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConceptChunk.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/accelXZero (ConceptInstance).md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/TheoryModel.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/yAxisGravity (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/Section.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/Reference.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/DecRef.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/Citation.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/InstanceModel.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/UnitDefn.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/MayHaveUnit.md",
+    "Designing Drasil's Chunks 2025/Analysis/ChunkDB.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Idea.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/DataDefinition.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/UnitalChunk.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/accelYGravity (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/twoDMotion (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/timeStartZero (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/targetXAxis (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/neglectDrag (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/neglectCurve (ConceptInstance).md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunks/ConceptInstances/gravAccelValue (ConceptInstance).md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/IsUnit.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/CI.md",
+    "Designing Drasil's Chunks 2025/Analysis/Typeclasses/HasSpace.md",
+    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/QDefinition.md",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0146.jpeg",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd",
