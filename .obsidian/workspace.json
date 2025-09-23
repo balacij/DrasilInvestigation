@@ -6,7 +6,6 @@
       {
         "id": "25e86b2c12df3d6a",
         "type": "tabs",
-        "dimension": 53.97862232779097,
         "children": [
           {
             "id": "0d51142c7adedf53",
@@ -141,56 +140,7 @@
               "title": "Questions, Commentary, and Issues"
             }
           }
-        ],
-        "currentTab": 4
-      },
-      {
-        "id": "705722a274551e6b",
-        "type": "tabs",
-        "dimension": 46.02137767220903,
-        "children": [
-          {
-            "id": "7723f8b0a91914b1",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "pinned": true,
-            "state": {
-              "type": "juggl_view",
-              "state": {},
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "9f19c9dc3218b518",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
-          }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -460,8 +410,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9f19c9dc3218b518",
+  "active": "0d51142c7adedf53",
   "lastOpenFiles": [
+    "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Calculation of landing time (InstanceModel).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/DataDefinition.md",
     "Questions, Commentary, and Issues.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/ConstrainedChunk.md",
@@ -487,7 +438,6 @@
     "Designing Drasil's Chunks 2025/Analysis/ChunkDB.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/Idea.md",
     "Designing Drasil's Chunks 2025/Analysis/Typeclasses/IsUnit.md",
-    "Designing Drasil's Chunks 2025/Analysis/Chunk Types/CI.md",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd/IMG_0146.jpeg",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/Sections",
     "Designing Drasil's Chunks 2025/Meetings/Apr 22nd",
