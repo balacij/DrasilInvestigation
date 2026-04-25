@@ -140,7 +140,8 @@
               "title": "Questions, Commentary, and Issues"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -400,6 +401,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -410,10 +412,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0d51142c7adedf53",
+  "active": "c209c9f5a094c5cb",
   "lastOpenFiles": [
-    "Untitled 1.md",
     "Designing Drasil's Chunks 2025 Status.md",
+    "Untitled 1.md",
     "Untitled.md",
     "Designing Drasil's Chunks 2025/Analysis/Chunks/InstanceModels/Calculation of landing time (InstanceModel).md",
     "Designing Drasil's Chunks 2025/Analysis/Chunk Types/DataDefinition.md",
